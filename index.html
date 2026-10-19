@@ -1,0 +1,1662 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c35">
+  <title>Caso AgroInvest | Contabilidade IV</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18312c;
+      --muted: #66756f;
+      --green: #1f6b52;
+      --green-dark: #173c35;
+      --green-pale: #e9f5ee;
+      --line: #dce6df;
+      --paper: #ffffff;
+      --canvas: #f1f5f1;
+      --yellow: #fff5cf;
+      --yellow-line: #edcf68;
+      --red-pale: #fff0ed;
+      --red: #9b382b;
+      --shadow: 0 16px 44px rgba(23, 60, 53, .11);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% -180px, #dcecdf 0, transparent 500px),
+        var(--canvas);
+      color: var(--ink);
+    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: .55; }
+    .topbar {
+      padding: 22px 18px 66px;
+      color: #fff;
+      background: var(--green-dark);
+    }
+    .topbar-inner, main { width: min(100% - 28px, 760px); margin: 0 auto; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 14px;
+      color: #d8edc8;
+      font-size: 22px;
+    }
+    .eyebrow { margin: 0 0 4px; color: #b8d2c0; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: 1.15rem; letter-spacing: -.02em; }
+    .topbar p:last-child { margin: 4px 0 0; color: #d6e5dc; font-size: .88rem; }
+    main { position: relative; margin-top: -45px; padding-bottom: 42px; }
+    .card {
+      margin-bottom: 16px;
+      padding: 20px;
+      border: 1px solid rgba(220,230,223,.9);
+      border-radius: 22px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .setup-card { padding: 24px; }
+    h2 { margin: 0 0 8px; font-size: 1.25rem; letter-spacing: -.025em; }
+    h3 { margin: 0 0 12px; font-size: 1rem; }
+    p { line-height: 1.55; }
+    .muted, .help { color: var(--muted); }
+    .help { margin: 6px 0 0; font-size: .82rem; }
+    .field { display: grid; gap: 7px; margin: 16px 0; }
+    label, .field-label { font-size: .88rem; font-weight: 750; }
+    .roster {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    .roster-option {
+      display: flex;
+      min-height: 44px;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+      font-size: .8rem;
+      font-weight: 600;
+      line-height: 1.25;
+      cursor: pointer;
+    }
+    .roster-option:has(input:checked) { border-color: #77aa8c; background: #f2f8f3; }
+    .roster-option.reserved { color: #7b8580; background: #f2f4f2; cursor: not-allowed; }
+    .roster-option input { flex: 0 0 auto; width: 17px; height: 17px; margin: 0; accent-color: var(--green); }
+    input[type="text"], select, textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid #cbd8d0;
+      border-radius: 12px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(31,107,82,.13); }
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+    }
+    .button:hover:not(:disabled) { background: #18583f; }
+    .button.secondary { border: 1px solid var(--line); background: #fff; color: var(--ink); }
+    .button.secondary:hover:not(:disabled) { background: #f5f8f5; }
+    .button.subtle { min-height: 38px; padding: 7px 11px; font-size: .84rem; }
+    .setup-card .button { width: 100%; margin-top: 4px; }
+    .notice {
+      margin: 14px 0 0;
+      padding: 12px 14px;
+      border: 1px solid var(--yellow-line);
+      border-radius: 12px;
+      background: var(--yellow);
+      color: #574514;
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+    .notice.error { border-color: #efb8ad; background: var(--red-pale); color: var(--red); }
+    .notice.success { border-color: #afd7bd; background: var(--green-pale); color: #22563b; }
+    .journey-head { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; }
+    .journey-head p { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
+    .progress-track { display: grid; grid-template-columns: repeat(6, 1fr); gap: 7px; margin: 18px 0 9px; }
+    .progress-segment { height: 7px; border-radius: 9px; background: #e4ebe6; }
+    .progress-segment.done { background: #42906b; }
+    .progress-segment.current { background: #e5b841; }
+    .progress-caption { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: .76rem; }
+    .stage-nav {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 7px;
+      margin: 16px 0 0;
+    }
+    .stage-nav button {
+      min-width: 0;
+      min-height: 44px;
+      padding: 6px 2px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: #53645d;
+      font-size: .74rem;
+      font-weight: 800;
+    }
+    .stage-nav button.active { border-color: var(--green); background: var(--green); color: white; }
+    .stage-nav button.done { border-color: #b8d9c1; background: var(--green-pale); color: #246344; }
+    .stage-title-row { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .stage-kicker { margin: 0 0 4px; color: var(--green); font-size: .72rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .stage-intro { margin: 0; color: var(--muted); font-size: .9rem; }
+    .score-pill {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #edf4ef;
+      color: #2d6448;
+      font-size: .8rem;
+      font-weight: 850;
+    }
+    .question { margin-top: 14px; padding: 17px; border: 1px solid var(--line); border-radius: 17px; }
+    .question-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .question-number { color: var(--green); font-size: .75rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .attempts { color: var(--muted); font-size: .76rem; }
+    .question-prompt { margin: 0 0 13px; white-space: pre-line; font-size: .93rem; line-height: 1.55; }
+    .option-list { display: grid; gap: 8px; }
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px 12px;
+      border: 1px solid #dbe4dd;
+      border-radius: 12px;
+      background: #fff;
+      font-size: .87rem;
+      font-weight: 500;
+      line-height: 1.45;
+      cursor: pointer;
+    }
+    .option:has(input:checked) { border-color: #77aa8c; background: #f2f8f3; }
+    .option.correct-choice { border-color: #a9d2b5; background: var(--green-pale); }
+    .option.incorrect-choice { border-color: #edc1b9; background: var(--red-pale); }
+    .option input { flex: 0 0 auto; width: 17px; height: 17px; margin: 1px 0 0; accent-color: var(--green); }
+    .question-actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 13px; }
+    .hint, .explanation { margin-top: 12px; padding: 12px 13px; border-radius: 12px; font-size: .85rem; line-height: 1.55; white-space: pre-line; }
+    .hint { border: 1px solid var(--yellow-line); background: var(--yellow); color: #574514; }
+    .explanation { border: 1px solid #b7d9c2; background: var(--green-pale); color: #235538; }
+    .answer-review { margin-top: 12px; font-size: .84rem; line-height: 1.55; }
+    .answer-review > p { margin: 0; }
+    .answer-review details { margin-top: 9px; }
+    .answer-review summary { color: #43564d; font-weight: 750; cursor: pointer; }
+    .answer-review details p { margin: 8px 0; white-space: pre-line; }
+    .answer-review .full-rationale { color: var(--muted); font-size: .8rem; }
+    .question-result { font-size: .82rem; font-weight: 800; }
+    .close-stage { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 18px; }
+    .score-line { color: var(--muted); font-size: .88rem; }
+    .balance-row { padding: 11px 0; border-top: 1px solid var(--line); }
+    .balance-row:first-child { border-top: 0; }
+    .balance-row strong { display: block; margin-bottom: 4px; font-size: .86rem; }
+    .balance-values { display: grid; gap: 3px; color: #43564d; font-size: .84rem; }
+    .checkpoint-field { margin-top: 14px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; }
+    .checkpoint-field > label, .checkpoint-field > strong { display: block; margin-bottom: 8px; }
+    .checkpoint-field input { margin-top: 6px; }
+    .checkpoint-result { margin-top: 12px; font-size: .85rem; font-weight: 750; }
+    .official-list { display: grid; gap: 10px; }
+    .technical-block { margin: 14px 0; padding: 16px; border: 1px solid var(--line); border-radius: 16px; }
+    .technical-block p { margin: 4px 0 12px; color: var(--muted); font-size: .83rem; }
+    .report-copy { padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: #fbfcfb; }
+    .report-copy p { margin: 0 0 12px; white-space: pre-line; line-height: 1.65; }
+    .report-copy p:last-child { margin-bottom: 0; }
+    .report-mark { padding: 12px; border-radius: 12px; background: #f3f5f2; font-size: .85rem; }
+    .footer-note { padding: 6px 8px 0; color: #718078; font-size: .75rem; line-height: 1.5; text-align: center; }
+    [hidden] { display: none !important; }
+    @media (min-width: 640px) {
+      .topbar { padding-top: 28px; }
+      .card { padding: 24px; }
+      .setup-card { padding: 30px; }
+      .question { padding: 20px; }
+      .stage-nav button { font-size: .84rem; }
+    }
+    @media (max-width: 380px) {
+      .card { padding: 16px; border-radius: 18px; }
+      .journey-head { display: block; }
+      .journey-head .button { margin-top: 12px; }
+      .close-stage { align-items: stretch; flex-direction: column; }
+      .close-stage .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">A</div>
+        <div>
+          <p class="eyebrow">Contabilidade IV</p>
+          <h1>Caso AgroInvest</h1>
+          <p>Aprendam, decidam e construam o parecer em equipe.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="loading" class="card" aria-live="polite">
+      <h2>Preparando o caso...</h2>
+      <p class="muted">Carregando empresas, questões e saldos oficiais.</p>
+    </section>
+
+    <section id="load-error" class="card" hidden>
+      <h2>Não foi possível carregar os dados</h2>
+      <p id="load-error-text" class="muted"></p>
+      <p class="help">Abra esta pasta por um servidor estático ou publique os arquivos juntos. Por exemplo, execute <code>python -m http.server</code> nesta pasta e acesse <code>http://localhost:8000</code>.</p>
+    </section>
+
+    <section id="reservation-error" class="card" hidden>
+      <h2>Não foi possível confirmar a reserva</h2>
+      <p id="reservation-error-text" class="muted"></p>
+      <button id="retry-reservations" class="button secondary" type="button">Tentar novamente</button>
+    </section>
+
+    <section id="setup" class="card setup-card" hidden>
+      <p class="eyebrow" style="color:var(--green)">Jornada em equipe</p>
+      <h2 id="setup-title">Formem o grupo e escolham a empresa</h2>
+      <p class="muted">Marquem os integrantes e escolham a empresa do caso. Após confirmar, esses alunos e essa empresa ficam reservados para o grupo. O grupo pode editar integrantes depois; a empresa não pode ser trocada.</p>
+      <form id="setup-form">
+        <div class="field">
+          <span class="field-label" id="roster-label">Integrantes do grupo</span>
+          <fieldset id="student-roster" class="roster" aria-labelledby="roster-label"></fieldset>
+          <p class="help">A combinação dos nomes identifica o grupo. As reservas são compartilhadas; as respostas e notas ficam salvas neste navegador.</p>
+          <p id="team-selection-error" class="notice error" role="alert" hidden>Marquem ao menos um integrante para continuar.</p>
+        </div>
+        <div class="field">
+          <label for="company-select">Empresa do caso</label>
+          <select id="company-select" required></select>
+          <p id="company-lock-note" class="help" hidden>A empresa fica reservada para este grupo e não pode ser trocada.</p>
+        </div>
+        <button id="setup-submit" class="button" type="submit">Reservar e abrir a jornada <span aria-hidden="true">→</span></button>
+        <button id="cancel-edit" class="button secondary" type="button" hidden>Cancelar edição</button>
+      </form>
+      <p id="saved-session-note" class="help" hidden>Encontramos progresso salvo para esta equipe e empresa.</p>
+      <p id="reservation-conflict" class="notice error" role="alert" hidden></p>
+      <p class="help">O envio ao Google Form será ativado após configurar a URL e os campos <code>entry.*</code> no bloco <code>FORM_CONFIG</code> desta página. Registros ficam em fila até que a configuração e a conexão estejam disponíveis.</p>
+    </section>
+
+    <section id="journey" hidden>
+      <div class="card">
+        <div class="journey-head">
+          <div>
+            <p class="eyebrow" style="color:var(--green)">Progresso da equipe</p>
+            <h2 id="journey-company"></h2>
+            <p id="journey-group"></p>
+          </div>
+          <button id="change-team" class="button secondary subtle" type="button">Editar integrantes</button>
+        </div>
+        <div id="progress-track" class="progress-track" aria-label="Progresso das seis etapas"></div>
+        <div class="progress-caption"><span id="progress-caption"></span><span>6 etapas</span></div>
+        <nav id="stage-nav" class="stage-nav" aria-label="Etapas do caso"></nav>
+      </div>
+      <div id="stage-content"></div>
+    </section>
+
+    <p class="footer-note">O progresso é armazenado apenas neste navegador. Para não perder os dados, não limpe os dados do site até concluir a atividade.</p>
+  </main>
+
+  <script>
+    "use strict";
+
+    const FORM_CONFIG = {
+      endpoint: "",
+      entries: {
+        group: "",
+        company: "",
+        stage: "",
+        score: "",
+        balance: ""
+      }
+    };
+    const STORAGE_PREFIX = "agroinvest:v1:";
+    const LAST_SESSION_KEY = "agroinvest:v1:last-session";
+    const RESERVATION_TOKEN_KEY = "agroinvest:reservation-token";
+    const RESERVATIONS_API = "/api/reservations";
+    const STAGE_NAMES = [
+      "Classificação",
+      "Reconhecimento inicial",
+      "Ciclo produtivo e colheita",
+      "Imprevistos",
+      "Fechamento e laudo",
+      "Parecer"
+    ];
+    const STUDENTS = [
+      "Amanda Schmit",
+      "Beatriz Cirico",
+      "Beatriz de Oliveira Rausch",
+      "Fabricio Murilo Heinzen Filho",
+      "Gabriele Graf Monster",
+      "Gabrielle Raddatz",
+      "Gregory Zahir Fischer Schmitt",
+      "Jennyfer Gaike",
+      "Manuela Letícia Fritzke",
+      "Marina Antonia Nardelli Milbratz",
+      "Mateus Fritzke",
+      "Monalisa Pegoraro",
+      "Nadia Fernandes Astigarraga",
+      "Nicolas Gabriel Voigt",
+      "Rosa Maria de Pontes Neta",
+      "Susana Nolli dos Santos",
+      "Vitória de Souza Oliveira"
+    ];
+    let data;
+    let currentSession = null;
+    let currentSessionKey = "";
+    let activeStage = 1;
+    let reservationAvailability = { reservedStudentIds: [], reservedCompanyIds: [], group: null };
+    let reservationToken = "";
+    let editingTeam = false;
+
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const stageContent = $("#stage-content");
+
+    function esc(value) {
+      return String(value ?? "");
+    }
+
+    function formatGrade(cents) {
+      return (Number(cents || 0) / 100).toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function totalScoreCents() {
+      return Object.values(currentSession.completedStages)
+        .reduce((total, stage) => total + Number(stage.scoreCents || 0), 0);
+    }
+
+    function saveSession() {
+      if (!currentSessionKey || !currentSession) return;
+      localStorage.setItem(currentSessionKey, JSON.stringify(currentSession));
+      localStorage.setItem(LAST_SESSION_KEY, JSON.stringify({
+        group: currentSession.group,
+        groupIds: currentSession.groupIds,
+        companyId: currentSession.companyId,
+        reservationToken: currentSession.reservationToken
+      }));
+    }
+
+    function sessionKey(token) {
+      return STORAGE_PREFIX + token;
+    }
+
+    async function loadReservationAvailability(token = "") {
+      const headers = token ? { "X-Reservation-Token": token } : {};
+      const response = await fetch(RESERVATIONS_API, { cache: "no-store", headers });
+      if (!response.ok) {
+        throw new Error("O endpoint de reservas só fica disponível depois de publicar também a Netlify Function.");
+      }
+      const result = await response.json();
+      reservationAvailability = result;
+      return result;
+    }
+
+    async function saveReservation(token, studentIds, companyId) {
+      const response = await fetch(RESERVATIONS_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, studentIds, companyId })
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        await loadReservationAvailability(token);
+        updateReservationChoices();
+        const messages = {
+          student_unavailable: "Um ou mais alunos já fazem parte de outro grupo. A lista foi atualizada; revisem os nomes marcados.",
+          company_unavailable: "Essa empresa já foi reservada por outro grupo. Escolham outra empresa.",
+          company_locked: "A empresa desta equipe já está reservada e não pode ser trocada.",
+          reservation_busy: "Há outras equipes confirmando reservas agora. Tentem novamente em alguns segundos."
+        };
+        const error = new Error(messages[result.error] || "Não foi possível confirmar a reserva. Tentem novamente.");
+        error.conflict = true;
+        throw error;
+      }
+      reservationAvailability = result;
+      return result;
+    }
+
+    function updateReservationChoices() {
+      const roster = $("#student-roster");
+      for (const checkbox of roster.querySelectorAll('input[name="group-member"]')) {
+        const studentId = Number(checkbox.value);
+        const ownReservation = currentSession?.groupIds?.includes(studentId) ||
+          reservationAvailability.group?.studentIds?.includes(studentId);
+        const reserved = reservationAvailability.reservedStudentIds.includes(studentId);
+        if (reserved && !ownReservation) checkbox.checked = false;
+        checkbox.disabled = reserved && !ownReservation;
+        const label = checkbox.closest(".roster-option");
+        label.classList.toggle("reserved", reserved && !ownReservation);
+        label.title = reserved && !ownReservation
+          ? "Este aluno já pertence a outro grupo."
+          : "";
+      }
+
+      const select = $("#company-select");
+      for (const option of select.options) {
+        const companyId = Number(option.value);
+        const ownCompany = Number(currentSession?.companyId) === companyId ||
+          Number(reservationAvailability.group?.companyId) === companyId;
+        const reserved = reservationAvailability.reservedCompanyIds.includes(companyId);
+        const company = data.companies.find((item) => item.id === companyId);
+        option.disabled = (reserved && !ownCompany) || (editingTeam && !ownCompany);
+        option.textContent = reserved && !ownCompany
+          ? `${company?.name || option.value} — reservada`
+          : company?.name || option.value;
+      }
+      if (editingTeam || reservationAvailability.group) {
+        select.disabled = true;
+        $("#company-lock-note").hidden = false;
+      } else {
+        select.disabled = false;
+        $("#company-lock-note").hidden = true;
+      }
+      $("#setup-title").textContent = editingTeam
+        ? "Editar integrantes do grupo"
+        : reservationAvailability.group
+          ? "Retomar grupo"
+          : "Formem o grupo e escolham a empresa";
+      $("#setup-submit").innerHTML = editingTeam
+        ? "Salvar integrantes <span aria-hidden=\"true\">→</span>"
+        : reservationAvailability.group
+          ? "Continuar jornada <span aria-hidden=\"true\">→</span>"
+          : "Reservar e abrir a jornada <span aria-hidden=\"true\">→</span>";
+      $("#cancel-edit").hidden = !editingTeam;
+    }
+
+    function getCompany() {
+      return data.companies.find((company) => company.id === currentSession.companyId);
+    }
+
+    function setNotice(container, text, className = "notice") {
+      const notice = document.createElement("div");
+      notice.className = className;
+      notice.textContent = text;
+      container.append(notice);
+      return notice;
+    }
+
+    function balanceFor(stage, companyId) {
+      return data.balances[String(stage)]?.companies?.[String(companyId)] || null;
+    }
+
+    function checkpointFor(stage, companyId) {
+      const id = String(companyId);
+      if (stage === 1) {
+        return (data.stageOneItems[id] || []).map((item, index) => ({
+          key: `item-${index}`,
+          label: `${item.item} · ${item.asset}`,
+          expected: item.classification,
+          item
+        }));
+      }
+      if (stage >= 2 && stage <= 4) {
+        const checkpoint = balanceFor(stage, companyId)?.checkpoint;
+        return checkpoint ? [
+          { key: "cash", label: "Caixa ao final da etapa", expected: checkpoint.cash },
+          { key: "result", label: "Resultado acumulado", expected: checkpoint.result }
+        ] : [];
+      }
+      if (stage === 5) {
+        const checkpoint = data.stageFive?.checkpoint?.[id];
+        return checkpoint ? [
+          { key: "laudoA", label: "Efeito no resultado com o laudo A", expected: checkpoint.laudoA },
+          { key: "laudoB", label: "Efeito no resultado com o laudo B", expected: checkpoint.laudoB },
+          { key: "cashEffect", label: "Entrada de caixa com o ganho", expected: checkpoint.cashEffect }
+        ] : [];
+      }
+      return [];
+    }
+
+    function checkpointState(stage) {
+      if (!currentSession.checkpoints) currentSession.checkpoints = {};
+      if (!currentSession.checkpoints[String(stage)]) {
+        currentSession.checkpoints[String(stage)] = {
+          attempts: 0,
+          resolved: false,
+          pointsCents: 0,
+          values: {}
+        };
+      }
+      return currentSession.checkpoints[String(stage)];
+    }
+
+    function formatBalanceValue(value) {
+      if (typeof value === "number") {
+        return value.toLocaleString("pt-BR", { maximumFractionDigits: 2 });
+      }
+      return String(value);
+    }
+
+    function renderOfficialCheckpoint(stage, parent) {
+      const fields = checkpointFor(stage, currentSession.companyId);
+      const card = document.createElement("section");
+      card.className = "card";
+      const title = document.createElement("h3");
+      title.textContent = stage === 1 ? "Classificação oficial dos bens" : "Gabarito do checkpoint";
+      card.append(title);
+      if (!fields.length) {
+        setNotice(card, `Não há gabarito disponível para a etapa ${stage}.`, "notice error");
+      } else {
+        for (const field of fields) {
+          const row = document.createElement("div");
+          row.className = "balance-row";
+          const label = document.createElement("strong");
+          label.textContent = field.label;
+          const value = document.createElement("span");
+          value.textContent = formatBalanceValue(field.expected);
+          row.append(label, value);
+          if (field.item) {
+            const reference = document.createElement("span");
+            reference.className = "help";
+            reference.textContent = `${field.item.balanceGroup} · ${field.item.standard}`;
+            row.append(reference);
+          }
+          card.append(row);
+        }
+      }
+      parent.append(card);
+    }
+
+    function renderBalance(stage, parent) {
+      const card = document.createElement("section");
+      card.className = "card";
+      const title = document.createElement("h3");
+      title.textContent = "Saldo oficial";
+      card.append(title);
+      const companyBalance = balanceFor(stage, currentSession.companyId);
+      if (!companyBalance) {
+        const missingSheet = `Gabarito E${stage}`;
+        const message = data.missingBalanceSheets.includes(missingSheet)
+          ? `A aba ${missingSheet} não existe na planilha de origem; nenhum valor foi presumido.`
+          : `A planilha não contém uma aba de saldo oficial para a etapa ${stage}.`;
+        setNotice(card, message);
+      } else if (!companyBalance.summaryRows.length) {
+        setNotice(card, "A aba existe, mas não há linha de saldo identificada para esta empresa.", "notice error");
+      } else {
+        for (const row of companyBalance.summaryRows) {
+          const rowCard = document.createElement("div");
+          rowCard.className = "balance-row";
+          const label = document.createElement("strong");
+          label.textContent = [
+            row["Evento"],
+            row["Débito"],
+            row["Crédito"]
+          ].filter(Boolean).join(" · ") || "Resumo";
+          rowCard.append(label);
+          const values = document.createElement("div");
+          values.className = "balance-values";
+          for (const [key, value] of Object.entries(row)) {
+            if (["Empresa", "Evento", "Débito", "Crédito"].includes(key)) continue;
+            const line = document.createElement("span");
+            line.textContent = `${key}: ${formatBalanceValue(value)}`;
+            values.append(line);
+          }
+          rowCard.append(values);
+          card.append(rowCard);
+        }
+      }
+      parent.append(card);
+    }
+
+    function renderStageFiveDre(parent) {
+      const card = document.createElement("section");
+      card.className = "card";
+      const title = document.createElement("h3");
+      title.textContent = "DRE oficial da empresa";
+      card.append(title);
+      const rows = data.stageFive?.dreRows || [];
+      if (!rows.length) {
+        setNotice(card, "A aba Gabarito E5 não contém linhas de DRE.", "notice error");
+      } else {
+        for (const row of rows) {
+          const item = document.createElement("div");
+          item.className = "balance-row";
+          const label = document.createElement("strong");
+          label.textContent = row.label;
+          const value = document.createElement("span");
+          value.textContent = formatBalanceValue(row.values[String(currentSession.companyId)]);
+          item.append(label, value);
+          card.append(item);
+        }
+      }
+      parent.append(card);
+    }
+
+    function parseCheckpointNumber(value) {
+      const normalized = String(value).trim().replace(/[−–]/g, "-").replace(/\s/g, "").replace(/^R\$/i, "");
+      if (!/^-?\d+(?:\.\d{3})*(?:,\d+)?$/.test(normalized) &&
+          !/^-?\d+(?:,\d+)?$/.test(normalized)) return null;
+      return Number(normalized.replace(/\./g, "").replace(",", "."));
+    }
+
+    function renderCheckpoint(stage, parent, readonly = false) {
+      const fields = checkpointFor(stage, currentSession.companyId);
+      const state = checkpointState(stage);
+      const card = document.createElement("section");
+      card.className = "card";
+      const title = document.createElement("h3");
+      title.textContent = "Checkpoint prático";
+      const instructions = document.createElement("p");
+      instructions.className = "help";
+      instructions.textContent = "O checkpoint vale até 0,50 ponto: 0,50 na primeira tentativa, 0,25 na segunda e 0 após isso. Vocês têm até três tentativas.";
+      card.append(title, instructions);
+      if (!fields.length) {
+        setNotice(card, `Não há dados de checkpoint para a etapa ${stage}.`, "notice error");
+        parent.append(card);
+        return;
+      }
+      for (const field of fields) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "checkpoint-field";
+        const label = document.createElement("label");
+        const controlId = `checkpoint-${stage}-${field.key}`;
+        label.htmlFor = controlId;
+        label.textContent = field.label;
+        let control;
+        if (stage === 1) {
+          control = document.createElement("select");
+          const placeholder = document.createElement("option");
+          placeholder.value = "";
+          placeholder.textContent = "Escolham uma classificação";
+          control.append(placeholder);
+          for (const optionText of [
+            "Ativo biológico (CPC 29)",
+            "Planta portadora – Imobilizado (CPC 27)",
+            "Produto agrícola → Estoque (CPC 29 e 16)",
+            "Estoque (CPC 16)",
+            "Imobilizado (CPC 27)",
+            "Propriedade para investimento (CPC 28)"
+          ]) {
+            const option = document.createElement("option");
+            option.value = optionText;
+            option.textContent = optionText;
+            control.append(option);
+          }
+        } else {
+          control = document.createElement("input");
+          control.type = "text";
+          control.inputMode = "decimal";
+          control.placeholder = "Ex.: 1.395.000 ou -40.000";
+          control.autocomplete = "off";
+        }
+        control.id = controlId;
+        control.value = state.values[field.key] || "";
+        control.disabled = readonly || state.resolved;
+        control.addEventListener("input", () => {
+          state.values[field.key] = control.value;
+          saveSession();
+        });
+        control.addEventListener("change", () => {
+          state.values[field.key] = control.value;
+          saveSession();
+        });
+        wrapper.append(label, control);
+        if (state.resolved) {
+          const result = document.createElement("p");
+          result.className = "checkpoint-result";
+          result.textContent = `${state.pointsCents ? "Checkpoint concluído" : "Tentativas encerradas"} · ${formatGrade(state.pointsCents)} ponto`;
+          result.style.color = state.pointsCents ? "var(--green)" : "var(--muted)";
+          wrapper.append(result);
+        }
+        card.append(wrapper);
+      }
+      if (!state.resolved && !readonly) {
+        const submit = document.createElement("button");
+        submit.className = "button subtle";
+        submit.type = "button";
+        submit.textContent = "Conferir checkpoint";
+        submit.addEventListener("click", () => {
+          const incomplete = fields.some((field) => !String(state.values[field.key] || "").trim());
+          if (incomplete) {
+            setNotice(card, "Preencham todos os campos antes de conferir.");
+            return;
+          }
+          state.attempts += 1;
+          const correct = fields.every((field) => {
+            if (stage === 1) return state.values[field.key] === field.expected;
+            return parseCheckpointNumber(state.values[field.key]) === Number(field.expected);
+          });
+          state.latestCorrect = correct;
+          if (correct) {
+            state.resolved = true;
+            state.pointsCents = state.attempts === 1 ? 50 : state.attempts === 2 ? 25 : 0;
+          } else if (state.attempts >= 3) {
+            state.resolved = true;
+            state.pointsCents = 0;
+          }
+          saveSession();
+          render();
+        });
+        card.append(submit);
+      }
+      if (!state.resolved && state.attempts > 0 && !state.latestCorrect) {
+        setNotice(card, `Há respostas para revisar. Tentativa ${state.attempts} de 3.`, "notice");
+      }
+      parent.append(card);
+      if (state.resolved) {
+        renderOfficialCheckpoint(stage, parent);
+        if (stage >= 2 && stage <= 4) renderBalance(stage, parent);
+        if (stage === 5) renderStageFiveDre(parent);
+      }
+    }
+
+    function formIsConfigured() {
+      return Boolean(
+        FORM_CONFIG.endpoint &&
+        Object.values(FORM_CONFIG.entries).every((entry) => /^entry\.\d+$/.test(entry))
+      );
+    }
+
+    function submissionFields(submission) {
+      const values = {
+        group: submission.group,
+        company: submission.company,
+        stage: String(submission.stage),
+        score: formatGrade(submission.totalCents),
+        balance: submission.balanceSummary
+      };
+      const params = new URLSearchParams();
+      for (const [key, entryId] of Object.entries(FORM_CONFIG.entries)) {
+        params.set(entryId, values[key] || "");
+      }
+      return params;
+    }
+
+    async function flushOutbox() {
+      if (!currentSession || !navigator.onLine || !formIsConfigured()) return;
+      const outbox = [...currentSession.outbox];
+      for (const submission of outbox) {
+        try {
+          await fetch(FORM_CONFIG.endpoint, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+            body: submissionFields(submission).toString()
+          });
+          currentSession.outbox = currentSession.outbox.filter(
+            (item) => item.stage !== submission.stage || item.group !== submission.group
+          );
+          saveSession();
+        } catch {
+          break;
+        }
+      }
+    }
+
+    window.addEventListener("online", () => { void flushOutbox(); });
+
+    function balanceSummaryText(stage) {
+      if (stage === 1) {
+        return checkpointFor(stage, currentSession.companyId)
+          .map((field) => `${field.label}: ${field.expected}`)
+          .join("; ");
+      }
+      if (stage === 5) {
+        const checkpoint = data.stageFive?.checkpoint?.[String(currentSession.companyId)];
+        return checkpoint
+          ? `Laudo A: ${formatBalanceValue(checkpoint.laudoA)}; Laudo B: ${formatBalanceValue(checkpoint.laudoB)}; entrada de caixa: ${formatBalanceValue(checkpoint.cashEffect)}`
+          : "Gabarito E5 indisponível";
+      }
+      if (stage === 6) return "Parecer final";
+      const item = balanceFor(stage, currentSession.companyId);
+      if (!item) return "Indisponível na planilha";
+      return item.summaryRows.map((row) => Object.entries(row)
+        .filter(([key, value]) => key !== "Empresa" && value !== null)
+        .map(([key, value]) => `${key}: ${formatBalanceValue(value)}`)
+        .join("; ")).join(" | ");
+    }
+
+    function queueSubmission(stage, totalCents) {
+      if (currentSession.outbox.some((item) =>
+        item.stage === stage && item.group === currentSession.group
+      )) return;
+      currentSession.outbox.push({
+        group: currentSession.group,
+        company: getCompany().name,
+        stage,
+        totalCents,
+        balanceSummary: balanceSummaryText(stage)
+      });
+      saveSession();
+      void flushOutbox();
+    }
+
+    function allStagesComplete() {
+      return [1, 2, 3, 4, 5].every((stage) =>
+        Boolean(currentSession.completedStages[String(stage)])
+      );
+    }
+
+    function renderProgress() {
+      const completedCount = Object.keys(currentSession.completedStages).length;
+      $("#journey-company").textContent = getCompany().name;
+      $("#journey-group").textContent = `Grupo: ${currentSession.group}`;
+      $("#progress-caption").textContent =
+        `${completedCount} de 6 etapas concluídas · Nota acumulada ${formatGrade(totalScoreCents())}`;
+      const track = $("#progress-track");
+      track.replaceChildren();
+      const nav = $("#stage-nav");
+      nav.replaceChildren();
+      for (let stage = 1; stage <= 6; stage++) {
+        const completed = Boolean(currentSession.completedStages[String(stage)]);
+        const available = stage === 1 || Boolean(currentSession.completedStages[String(stage - 1)]);
+        const segment = document.createElement("div");
+        segment.className = "progress-segment" +
+          (completed ? " done" : stage === activeStage ? " current" : "");
+        track.append(segment);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.disabled = !available;
+        button.className = (completed ? "done " : "") + (stage === activeStage ? "active" : "");
+        button.textContent = `${stage}${completed ? " ✓" : ""}`;
+        button.setAttribute("aria-label", `Etapa ${stage}: ${STAGE_NAMES[stage - 1]}`);
+        button.addEventListener("click", () => {
+          activeStage = stage;
+          render();
+        });
+        nav.append(button);
+      }
+    }
+
+    function appendStageHeader(parent, stage, title, subtitle, scoreText) {
+      const header = document.createElement("section");
+      header.className = "card";
+      const row = document.createElement("div");
+      row.className = "stage-title-row";
+      const titleWrap = document.createElement("div");
+      const kicker = document.createElement("p");
+      kicker.className = "stage-kicker";
+      kicker.textContent = `Etapa ${stage} de 6`;
+      const heading = document.createElement("h2");
+      heading.textContent = title;
+      const intro = document.createElement("p");
+      intro.className = "stage-intro";
+      intro.textContent = subtitle;
+      titleWrap.append(kicker, heading, intro);
+      row.append(titleWrap);
+      if (scoreText) {
+        const score = document.createElement("span");
+        score.className = "score-pill";
+        score.textContent = scoreText;
+        row.append(score);
+      }
+      header.append(row);
+      parent.append(header);
+      return header;
+    }
+
+    function questionState(stage, question) {
+      const answers = currentSession.answers[String(stage)];
+      if (!answers[question.id]) {
+        answers[question.id] = {
+          attempts: 0,
+          selected: "",
+          resolved: false,
+          pointsCents: 0
+        };
+      }
+      return answers[question.id];
+    }
+
+    function renderRationale(container, question, letter, className, label) {
+      const rationale = question.rationales[letter];
+      if (!rationale) return;
+      const box = document.createElement("div");
+      box.className = className;
+      const strong = document.createElement("strong");
+      strong.textContent = `${label}: `;
+      box.append(strong, document.createTextNode(rationale));
+      container.append(box);
+    }
+
+    function rationalePreview(value) {
+      let text = String(value || "").trim();
+      const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+      if (lines.length > 1 && /^\([^)]*\)\.?$/.test(lines[0])) {
+        text = lines.slice(1).join(" ");
+      }
+      text = text.replace(/^\s*[•–-]\s*/, "").replace(/\s+/g, " ");
+      const sentence = text.match(/^.*?[.!?](?:["”’)]*) (?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ•(])/u);
+      if (sentence) text = sentence[0].trim();
+      if (text.length > 240) {
+        const clipped = text.slice(0, 237);
+        text = `${clipped.slice(0, clipped.lastIndexOf(" "))}...`;
+      }
+      return text;
+    }
+
+    function renderAnswerReview(container, question, state) {
+      const review = document.createElement("div");
+      review.className = "answer-review";
+      const correctRationale = question.rationales[question.answer];
+      const correct = document.createElement("div");
+      correct.className = "explanation";
+      const correctTitle = document.createElement("strong");
+      correctTitle.textContent = `Por que ${question.answer.toUpperCase()} está correta`;
+      correct.append(correctTitle);
+      const correctSummary = document.createElement("p");
+      correctSummary.textContent = rationalePreview(correctRationale) ||
+        question.generalRationale || "Consulte a alternativa correta e a norma aplicável.";
+      correct.append(correctSummary);
+      if (correctRationale && rationalePreview(correctRationale) !== correctRationale.replace(/\s+/g, " ").trim()) {
+        const full = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "Ver explicação e referências completas";
+        const text = document.createElement("p");
+        text.className = "full-rationale";
+        text.textContent = correctRationale;
+        full.append(summary, text);
+        correct.append(full);
+      }
+      review.append(correct);
+
+      const distractors = question.alternatives.filter(
+        (alternative) => alternative.letter !== question.answer
+      );
+      const otherOptions = document.createElement("details");
+      const otherSummary = document.createElement("summary");
+      otherSummary.textContent = `Por que as outras ${distractors.length} alternativas estão erradas?`;
+      otherOptions.append(otherSummary);
+      for (const alternative of distractors) {
+        const rationale = question.rationales[alternative.letter];
+        const item = document.createElement("details");
+        const itemSummary = document.createElement("summary");
+        itemSummary.textContent = `Alternativa ${alternative.letter.toUpperCase()}`;
+        const explanation = document.createElement("p");
+        explanation.textContent = rationalePreview(rationale) ||
+          "Consulte a justificativa completa da alternativa.";
+        item.append(itemSummary, explanation);
+        if (rationale && rationalePreview(rationale) !== rationale.replace(/\s+/g, " ").trim()) {
+          const full = document.createElement("details");
+          const fullSummary = document.createElement("summary");
+          fullSummary.textContent = "Ver explicação e referências completas";
+          const fullText = document.createElement("p");
+          fullText.className = "full-rationale";
+          fullText.textContent = rationale;
+          full.append(fullSummary, fullText);
+          item.append(full);
+        }
+        otherOptions.append(item);
+      }
+      review.append(otherOptions);
+
+      const marked = document.createElement("p");
+      marked.className = "help";
+      marked.textContent = state.selected === question.answer
+        ? `Resposta marcada pelo grupo: ${state.selected.toUpperCase()} (correta).`
+        : `Resposta marcada pelo grupo: ${state.selected.toUpperCase()} (incorreta). A correta era ${question.answer.toUpperCase()}.`;
+      review.append(marked);
+      container.append(review);
+    }
+
+    function renderQuestion(stage, question, parent, completed) {
+      const state = questionState(stage, question);
+      const card = document.createElement("article");
+      card.className = "question";
+      const head = document.createElement("div");
+      head.className = "question-head";
+      const number = document.createElement("span");
+      number.className = "question-number";
+      number.textContent = `Questão ${question.id}`;
+      const attempts = document.createElement("span");
+      attempts.className = "attempts";
+      attempts.textContent = state.resolved
+        ? `${state.attempts} ${state.attempts === 1 ? "tentativa" : "tentativas"}`
+        : `${state.attempts} ${state.attempts === 1 ? "tentativa" : "tentativas"}`;
+      head.append(number, attempts);
+      const prompt = document.createElement("p");
+      prompt.className = "question-prompt";
+      prompt.textContent = question.prompt;
+      const options = document.createElement("div");
+      options.className = "option-list";
+      for (const alternative of question.alternatives) {
+        const label = document.createElement("label");
+        label.className = "option";
+        if (state.resolved) {
+          if (alternative.letter === question.answer) label.classList.add("correct-choice");
+          else if (alternative.letter === state.selected) label.classList.add("incorrect-choice");
+        }
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = `stage-${stage}-question-${question.id}`;
+        radio.value = alternative.letter;
+        radio.checked = state.selected === alternative.letter;
+        radio.disabled = completed || state.resolved;
+        radio.addEventListener("change", () => {
+          state.selected = alternative.letter;
+          saveSession();
+        });
+        const text = document.createElement("span");
+        text.textContent = `${alternative.letter.toUpperCase()}) ${alternative.text}`;
+        label.append(radio, text);
+        options.append(label);
+      }
+      const actions = document.createElement("div");
+      actions.className = "question-actions";
+      const submit = document.createElement("button");
+      submit.className = "button subtle";
+      submit.type = "button";
+      submit.textContent = "Conferir resposta";
+      submit.disabled = completed || state.resolved;
+      submit.addEventListener("click", () => {
+        if (!state.selected) {
+          const notice = setNotice(card, "Marquem uma alternativa antes de conferir.");
+          window.setTimeout(() => notice.remove(), 2500);
+          return;
+        }
+        state.attempts += 1;
+        if (state.selected === question.answer) {
+          state.resolved = true;
+          state.pointsCents = state.attempts === 1 ? 30 : state.attempts === 2 ? 15 : 0;
+        } else if (state.attempts >= 2) {
+          state.resolved = true;
+          state.pointsCents = 0;
+        }
+        saveSession();
+        render();
+      });
+      const result = document.createElement("span");
+      result.className = "question-result";
+      if (state.resolved) {
+        result.textContent = state.pointsCents
+          ? `+${formatGrade(state.pointsCents)} ponto`
+          : "0,00 ponto";
+        result.style.color = state.pointsCents ? "var(--green)" : "var(--muted)";
+      } else {
+        result.textContent = `${formatGrade(state.pointsCents)} ponto`;
+        result.classList.add("muted");
+      }
+      if (!completed) actions.append(submit);
+      actions.append(result);
+      card.append(head, prompt, options, actions);
+
+      if (!state.resolved && state.attempts === 1 && state.selected !== question.answer) {
+        renderRationale(card, question, state.selected, "hint", "Dica sobre a alternativa marcada");
+      }
+      if (state.resolved) {
+        const message = state.pointsCents
+          ? "Resposta correta."
+          : "As duas tentativas foram usadas; esta questão vale zero.";
+        setNotice(card, message, "explanation");
+        renderAnswerReview(card, question, state);
+      }
+      parent.append(card);
+    }
+
+    function renderClosedStage(stage, parent) {
+      const completion = currentSession.completedStages[String(stage)];
+      appendStageHeader(
+        parent,
+        stage,
+        STAGE_NAMES[stage - 1],
+        "Esta etapa já foi concluída. Seu resultado e suas respostas continuam salvos.",
+        `Nota ${formatGrade(completion.scoreCents)}`
+      );
+      if (stage <= 5) {
+        const review = document.createElement("section");
+        review.className = "card";
+        const title = document.createElement("h3");
+        title.textContent = "Respostas registradas";
+        const intro = document.createElement("p");
+        intro.className = "help";
+        intro.textContent = "As alternativas marcadas e as justificativas continuam disponíveis para revisão; as respostas estão bloqueadas porque a nota já foi registrada.";
+        review.append(title, intro);
+        for (const question of data.questions.filter((item) => item.stage === stage)) {
+          renderQuestion(stage, question, review, true);
+        }
+        parent.append(review);
+        renderCheckpoint(stage, parent, true);
+      }
+      const result = document.createElement("section");
+      result.className = "card";
+      const resultTitle = document.createElement("h3");
+      resultTitle.textContent = "Etapa concluída";
+      const resultLine = document.createElement("p");
+      resultLine.className = "score-line";
+      resultLine.textContent = `Nota da etapa: ${formatGrade(completion.scoreCents)} · Nota acumulada: ${formatGrade(completion.totalCents)}`;
+      result.append(resultTitle, resultLine);
+      parent.append(result);
+      if (stage === 6 && completion.report) renderReport(completion.report, parent, true);
+      const next = document.createElement("button");
+      next.className = "button";
+      next.type = "button";
+      next.textContent = stage < 6 ? `Ir para etapa ${stage + 1}` : "Parecer concluído";
+      next.disabled = stage === 6;
+      next.addEventListener("click", () => {
+        activeStage = stage + 1;
+        render();
+      });
+      const card = document.createElement("section");
+      card.className = "card";
+      card.append(next);
+      parent.append(card);
+    }
+
+    function renderQuestionStage(stage, parent) {
+      const questions = data.questions.filter((question) => question.stage === stage);
+      const answers = currentSession.answers[String(stage)];
+      const resolvedCount = questions.filter((question) =>
+        Boolean(answers[question.id]?.resolved)
+      ).length;
+      const questionScoreCents = questions.reduce((total, question) =>
+        total + Number(answers[question.id]?.pointsCents || 0), 0);
+      const checkpoint = checkpointState(stage);
+      const scoreCents = questionScoreCents + Number(checkpoint.pointsCents || 0);
+      appendStageHeader(
+        parent,
+        stage,
+        STAGE_NAMES[stage - 1],
+        `Checkpoint de ${questions.length} questões. Erro na primeira tentativa revela uma dica; acerte na primeira para 0,30 ou na segunda para 0,15.`,
+        `${formatGrade(scoreCents)} ponto`
+      );
+      const list = document.createElement("section");
+      list.className = "card";
+      const listTitle = document.createElement("h3");
+      listTitle.textContent = "Checkpoint";
+      const listIntro = document.createElement("p");
+      listIntro.className = "help";
+      listIntro.textContent = `${resolvedCount} de ${questions.length} questões encerradas · questões: ${formatGrade(questions.length * 30)} pontos · checkpoint: até 0,50 ponto.`;
+      list.append(listTitle, listIntro);
+      for (const question of questions) {
+        renderQuestion(stage, question, list, false);
+      }
+      parent.append(list);
+      renderCheckpoint(stage, parent);
+      const closeRow = document.createElement("div");
+      closeRow.className = "close-stage";
+      const closeHelp = document.createElement("span");
+      closeHelp.className = "score-line";
+      closeHelp.textContent = resolvedCount === questions.length && checkpoint.resolved
+        ? "Questões e checkpoint concluídos."
+        : "Concluam as cinco questões e o checkpoint para fechar a etapa.";
+      const closeButton = document.createElement("button");
+      closeButton.className = "button";
+      closeButton.type = "button";
+      closeButton.textContent = "Fechar etapa";
+      closeButton.disabled = resolvedCount !== questions.length || !checkpoint.resolved;
+      closeButton.addEventListener("click", () => {
+        const totalCents = totalScoreCents() + scoreCents;
+        currentSession.completedStages[String(stage)] = {
+          scoreCents,
+          totalCents,
+          completedAt: new Date().toISOString()
+        };
+        saveSession();
+        queueSubmission(stage, totalCents);
+        render();
+      });
+      closeRow.append(closeHelp, closeButton);
+      parent.append(closeRow);
+    }
+
+    function renderTechnicalBlock(block, parent, savedChoices, generated) {
+      const card = document.createElement("section");
+      card.className = "technical-block";
+      const title = document.createElement("h3");
+      title.textContent = `Bloco ${block.id} · ${block.theme}`;
+      const prompt = document.createElement("p");
+      prompt.textContent = block.id === 4
+        ? "As duas versões são defensáveis; escolham a posição que melhor representa o julgamento da equipe. Este bloco não vale nota."
+        : "Escolham a versão tecnicamente adequada para a empresa.";
+      card.append(title, prompt);
+      const options = block.options;
+      for (const option of options) {
+        const label = document.createElement("label");
+        label.className = "option";
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = `report-${block.id}`;
+        radio.value = option.id;
+        radio.checked = savedChoices[String(block.id)] === option.id;
+        radio.disabled = generated;
+        radio.addEventListener("change", () => {
+          currentSession.reportChoices[String(block.id)] = option.id;
+          saveSession();
+        });
+        const text = document.createElement("span");
+        text.textContent = `${option.id.toUpperCase()}) ${option.text}`;
+        label.append(radio, text);
+        card.append(label);
+        if (generated) {
+          const feedback = document.createElement("div");
+          feedback.className = option.correct ? "explanation" : "hint";
+          feedback.textContent = `${option.correct ? "Versão tecnicamente adequada. " : ""}${option.rationale}`;
+          card.append(feedback);
+        }
+      }
+      parent.append(card);
+    }
+
+    function renderReport(report, parent, readonly = false) {
+      const card = document.createElement("section");
+      card.className = "card";
+      const title = document.createElement("h3");
+      title.textContent = "Parecer montado";
+      const subtitle = document.createElement("p");
+      subtitle.className = "help";
+      subtitle.textContent = `Nota técnica: ${formatGrade(report.scoreCents)} de 1,00 ponto · corrigida somente após gerar o parecer.`;
+      const copy = document.createElement("div");
+      copy.className = "report-copy";
+      for (const paragraph of report.paragraphs) {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        copy.append(p);
+      }
+      for (const block of report.technicalReviews || []) {
+        const reviewTitle = document.createElement("h4");
+        reviewTitle.textContent = `Bloco ${block.id} · ${block.theme}`;
+        card.append(reviewTitle);
+        for (const option of block.options) {
+          const explanation = document.createElement("p");
+          explanation.className = option.correct ? "explanation" : "hint";
+          const selected = option.id === block.selectedId ? " · escolhida pela equipe" : "";
+          explanation.textContent = `${option.id.toUpperCase()}${selected}: ${option.rationale}`;
+          card.append(explanation);
+        }
+      }
+      if (report.judgmentReview) {
+        const reviewTitle = document.createElement("h4");
+        reviewTitle.textContent = "Por quê · julgamento do laudo";
+        card.append(reviewTitle);
+        for (const option of report.judgmentReview.options) {
+          const explanation = document.createElement("p");
+          explanation.className = "help";
+          const selected = option.id === report.judgmentReview.selectedId ? " · escolhida pela equipe" : "";
+          explanation.textContent = `${option.id.toUpperCase()}${selected}: ${option.rationale}`;
+          card.append(explanation);
+        }
+      }
+      const judgment = document.createElement("p");
+      judgment.className = "report-mark";
+      judgment.textContent = `Julgamento do laudo (sem nota): ${report.judgment}`;
+      const justification = document.createElement("p");
+      justification.className = "report-mark";
+      justification.textContent = `Bloco 5 — justificativa da equipe: ${report.justification}`;
+      card.append(title, subtitle, copy, judgment, justification);
+      if (readonly) parent.append(card);
+      else return card;
+    }
+
+    function renderReportBuilder(stage, parent) {
+      const company = getCompany();
+      const blocks = data.reportBlocks[String(company.id)] || [];
+      const existing = currentSession.completedStages["6"];
+      appendStageHeader(
+        parent,
+        stage,
+        STAGE_NAMES[5],
+        "Montem o parecer. Os três blocos técnicos valem 1,00 ponto no total e só serão corrigidos ao gerar; o julgamento do laudo não vale nota.",
+        existing ? `Nota ${formatGrade(existing.scoreCents)}` : "Até 1,00 ponto"
+      );
+      if (existing) {
+        renderReport(existing.report, parent, true);
+        return;
+      }
+      const card = document.createElement("section");
+      card.className = "card";
+      const title = document.createElement("h3");
+      title.textContent = "Blocos técnicos";
+      const description = document.createElement("p");
+      description.className = "help";
+      description.textContent = "Cada bloco técnico vale um terço do ponto. A resposta correta e a nota aparecem somente depois de gerar.";
+      card.append(title, description);
+      const technicalBlocks = blocks.filter((block) => block.id >= 1 && block.id <= 3);
+      const judgmentBlock = blocks.find((block) => block.id === 4);
+      const justificationBlock = blocks.find((block) => block.id === 5);
+      if (technicalBlocks.length !== 3 || !judgmentBlock || !justificationBlock) {
+        setNotice(card, `A aba Parecer (blocos) está incompleta para ${company.name}.`, "notice error");
+        parent.append(card);
+        return;
+      }
+      for (const block of [...technicalBlocks, judgmentBlock]) {
+        renderTechnicalBlock(block, card, currentSession.reportChoices, false);
+      }
+      const justificationField = document.createElement("div");
+      justificationField.className = "field";
+      const justificationLabel = document.createElement("label");
+      justificationLabel.htmlFor = "report-justification";
+      justificationLabel.textContent = `Bloco 5 · ${justificationBlock.prompt || "Uma frase de justificativa"}`;
+      const justificationInput = document.createElement("textarea");
+      justificationInput.id = "report-justification";
+      justificationInput.maxLength = 400;
+      justificationInput.placeholder = "Ex.: A conclusão considera a finalidade do ativo e a evidência disponível no laudo.";
+      justificationInput.value = currentSession.reportChoices.justification || "";
+      justificationInput.addEventListener("input", () => {
+        currentSession.reportChoices.justification = justificationInput.value;
+        saveSession();
+      });
+      justificationField.append(justificationLabel, justificationInput);
+      card.append(justificationField);
+      const generate = document.createElement("button");
+      generate.className = "button";
+      generate.type = "button";
+      generate.textContent = "Gerar e corrigir parecer";
+      generate.addEventListener("click", () => {
+        const choices = currentSession.reportChoices;
+        const allBlocksChosen = [...technicalBlocks, judgmentBlock].every((block) =>
+          choices[String(block.id)]
+        );
+        if (!allBlocksChosen || !choices.justification?.trim()) {
+          setNotice(card, "Escolham uma versão para cada bloco e preencham a justificativa do bloco 5.");
+          return;
+        }
+        const correctCount = technicalBlocks.filter((block) =>
+          block.options.find((option) => option.id === choices[String(block.id)])?.correct
+        ).length;
+        const scoreCents = Math.round(correctCount * 100 / technicalBlocks.length);
+        const paragraphs = technicalBlocks.map((block) =>
+          block.options.find((option) => option.id === choices[String(block.id)]).text
+        );
+        const judgmentText = judgmentBlock.options.find((option) =>
+          option.id === choices[String(judgmentBlock.id)]
+        ).text;
+        const report = {
+          scoreCents,
+          correctCount,
+          paragraphs,
+          judgment: judgmentText,
+          justification: choices.justification.trim(),
+          choices: { ...choices },
+          technicalReviews: technicalBlocks.map((block) => ({
+            id: block.id,
+            theme: block.theme,
+            selectedId: choices[String(block.id)],
+            options: block.options
+          })),
+          judgmentReview: {
+            selectedId: choices[String(judgmentBlock.id)],
+            options: judgmentBlock.options
+          }
+        };
+        const totalCents = totalScoreCents() + scoreCents;
+        currentSession.completedStages["6"] = {
+          scoreCents,
+          totalCents,
+          report,
+          completedAt: new Date().toISOString()
+        };
+        saveSession();
+        queueSubmission(6, totalCents);
+        render();
+      });
+      card.append(generate);
+      parent.append(card);
+    }
+
+    function renderStage() {
+      stageContent.replaceChildren();
+      const stage = activeStage;
+      if (currentSession.completedStages[String(stage)]) {
+        renderClosedStage(stage, stageContent);
+        return;
+      }
+      if (stage <= 5) {
+        renderQuestionStage(stage, stageContent);
+      } else {
+        renderReportBuilder(stage, stageContent);
+      }
+    }
+
+    function render() {
+      if (!currentSession) return;
+      $("#setup").hidden = true;
+      $("#journey").hidden = false;
+      renderProgress();
+      renderStage();
+    }
+
+    function initializeSession(groupInfo, token) {
+      const selectedIds = [...groupInfo.studentIds].sort((a, b) => a - b);
+      const group = selectedIds.map((id) => STUDENTS[id - 1]).join(", ");
+      currentSessionKey = sessionKey(token);
+      const saved = localStorage.getItem(currentSessionKey);
+      const previous = saved ? JSON.parse(saved) : null;
+      currentSession = previous || {
+        group,
+        groupIds: selectedIds,
+        companyId: Number(groupInfo.companyId),
+        answers: Object.fromEntries([1, 2, 3, 4, 5].map((stage) => [String(stage), {}])),
+        checkpoints: {},
+        completedStages: {},
+        reportChoices: {},
+        outbox: []
+      };
+      currentSession.group = group;
+      currentSession.groupIds = selectedIds;
+      currentSession.companyId = Number(groupInfo.companyId);
+      currentSession.reservationToken = token;
+      if (!currentSession.outbox) currentSession.outbox = [];
+      if (!currentSession.reportChoices) currentSession.reportChoices = {};
+      if (!currentSession.answers) currentSession.answers = {};
+      if (!currentSession.completedStages) currentSession.completedStages = {};
+      for (const completion of Object.values(currentSession.completedStages)) {
+        delete completion.code;
+      }
+      for (const submission of currentSession.outbox) {
+        delete submission.code;
+      }
+      if (!currentSession.checkpoints) currentSession.checkpoints = {};
+      for (let stage = 1; stage <= 5; stage++) {
+        if (!currentSession.answers[String(stage)]) currentSession.answers[String(stage)] = {};
+        if (currentSession.completedStages[String(stage)] &&
+            !currentSession.checkpoints[String(stage)]) {
+          currentSession.checkpoints[String(stage)] = {
+            attempts: 0,
+            resolved: true,
+            pointsCents: 0,
+            values: {},
+            legacy: true
+          };
+        }
+      }
+      reservationToken = token;
+      localStorage.setItem(RESERVATION_TOKEN_KEY, token);
+      saveSession();
+      activeStage = [1, 2, 3, 4, 5, 6].find(
+        (stage) => !currentSession.completedStages[String(stage)]
+      ) || 6;
+      editingTeam = false;
+      $("#journey").hidden = false;
+      $("#setup").hidden = true;
+      render();
+      void flushOutbox();
+    }
+
+    function restoreReservationSetup(groupInfo, token, previous) {
+      reservationToken = token;
+      if (groupInfo) {
+        for (const id of groupInfo.studentIds) {
+          const checkbox = $(`#student-roster input[value="${id}"]`);
+          if (checkbox) checkbox.checked = true;
+        }
+        $("#company-select").value = String(groupInfo.companyId);
+        const saved = localStorage.getItem(sessionKey(token));
+        $("#saved-session-note").hidden = !saved;
+      } else {
+        if (previous) {
+          for (const id of previous.groupIds || []) {
+            const checkbox = $(`#student-roster input[value="${Number(id)}"]`);
+            if (checkbox) checkbox.checked = true;
+          }
+          if (data.companies.some((company) => company.id === Number(previous.companyId))) {
+            $("#company-select").value = String(previous.companyId);
+          }
+        }
+        $("#saved-session-note").hidden = true;
+      }
+      updateReservationChoices();
+    }
+
+    async function start() {
+      let dataLoaded = false;
+      try {
+        const response = await fetch("./dados.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`dados.json respondeu ${response.status}.`);
+        data = await response.json();
+        if (!Array.isArray(data.companies) || !Array.isArray(data.questions)) {
+          throw new Error("dados.json não contém empresas e questões no formato esperado.");
+        }
+        dataLoaded = true;
+        const lastSession = localStorage.getItem(LAST_SESSION_KEY);
+        let previous = null;
+        if (lastSession) {
+          try {
+            previous = JSON.parse(lastSession);
+          } catch {
+            previous = null;
+          }
+        }
+        reservationToken = previous?.reservationToken ||
+          localStorage.getItem(RESERVATION_TOKEN_KEY) || "";
+        const availability = await loadReservationAvailability(reservationToken);
+        $("#loading").hidden = true;
+        const select = $("#company-select");
+        select.replaceChildren();
+        for (const company of data.companies) {
+          const option = document.createElement("option");
+          option.value = String(company.id);
+          option.textContent = company.name;
+          select.append(option);
+        }
+        const roster = $("#student-roster");
+        roster.replaceChildren();
+        STUDENTS.forEach((student, index) => {
+          const label = document.createElement("label");
+          label.className = "roster-option";
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.name = "group-member";
+          checkbox.value = String(index + 1);
+          checkbox.addEventListener("change", () => {
+            $("#team-selection-error").hidden = true;
+            const selectedIds = Array.from(
+              roster.querySelectorAll('input[name="group-member"]:checked'),
+              (input) => Number(input.value)
+            ).sort((a, b) => a - b);
+            const groupInfo = reservationAvailability.group;
+            $("#saved-session-note").hidden = !groupInfo ||
+              selectedIds.join(",") !== groupInfo.studentIds.join(",");
+            const saved = reservationToken && localStorage.getItem(sessionKey(reservationToken));
+            $("#saved-session-note").hidden = !saved;
+          });
+          const name = document.createElement("span");
+          name.textContent = student;
+          label.append(checkbox, name);
+          roster.append(label);
+        });
+        restoreReservationSetup(availability.group, reservationToken, previous);
+        $("#setup").hidden = false;
+        $("#setup-form").onsubmit = async (event) => {
+          event.preventDefault();
+          $("#reservation-conflict").hidden = true;
+          const selectedIds = Array.from(
+            roster.querySelectorAll('input[name="group-member"]:checked'),
+            (input) => Number(input.value)
+          );
+          if (!selectedIds.length) {
+            $("#team-selection-error").hidden = false;
+            return;
+          }
+          const companyId = currentSession
+            ? currentSession.companyId
+            : reservationAvailability.group?.companyId || Number(select.value);
+          const token = currentSession?.reservationToken ||
+            reservationToken ||
+            crypto.randomUUID();
+          reservationToken = token;
+          localStorage.setItem(RESERVATION_TOKEN_KEY, token);
+          const submit = $("#setup-submit");
+          submit.disabled = true;
+          try {
+            const result = await saveReservation(token, selectedIds, companyId);
+            initializeSession(result.group, token);
+          } catch (error) {
+            const message = error instanceof Error
+              ? error.message
+              : "Falha inesperada ao confirmar o grupo.";
+            const notice = $("#reservation-conflict");
+            notice.textContent = message;
+            notice.hidden = false;
+          } finally {
+            submit.disabled = false;
+          }
+        };
+        $("#change-team").onclick = () => {
+          editingTeam = true;
+          reservationAvailability.group = {
+            studentIds: currentSession.groupIds,
+            companyId: currentSession.companyId
+          };
+          for (const checkbox of roster.querySelectorAll('input[name="group-member"]')) {
+            checkbox.checked = currentSession.groupIds.includes(Number(checkbox.value));
+          }
+          updateReservationChoices();
+          $("#journey").hidden = true;
+          $("#setup").hidden = false;
+          $("#saved-session-note").hidden = true;
+        };
+        $("#cancel-edit").onclick = () => {
+          editingTeam = false;
+          $("#setup").hidden = true;
+          $("#journey").hidden = false;
+        };
+        $("#retry-reservations").onclick = () => {
+          $("#reservation-error").hidden = true;
+          $("#loading").hidden = false;
+          void start();
+        };
+      } catch (error) {
+        if (dataLoaded) {
+          $("#loading").hidden = true;
+          $("#reservation-error").hidden = false;
+          $("#reservation-error-text").textContent = error instanceof Error
+            ? `Não conseguimos consultar as reservas compartilhadas. Verifique a conexão e tente novamente. (${error.message})`
+            : "Sem conexão com o serviço compartilhado de reservas.";
+          $("#retry-reservations").onclick = () => {
+            $("#reservation-error").hidden = true;
+            $("#loading").hidden = false;
+            void start();
+          };
+          return;
+        }
+        $("#loading").hidden = true;
+        $("#load-error").hidden = false;
+        $("#load-error-text").textContent = error instanceof Error
+          ? error.message
+          : "Falha inesperada ao ler dados.json.";
+      }
+    }
+
+    start();
+  </script>
+</body>
+</html>

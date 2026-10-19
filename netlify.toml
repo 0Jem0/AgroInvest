@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/reservations"
+  to = "/.netlify/functions/reservations"
+  status = 200

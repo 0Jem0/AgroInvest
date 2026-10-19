@@ -1,0 +1,2813 @@
+{
+  "sourceWorkbook": "Caso AgroInvest - acompanhamento.xlsx",
+  "generatedAt": "2026-10-19T15:05:11.073962-03:00",
+  "companies": [
+    {
+      "id": 1,
+      "name": "Estância Boi Bonito",
+      "sector": "Pecuária de corte (gado para consumo)",
+      "biologicalAsset": "Bois em engorda (consumíveis)",
+      "bearerPlantAndPpe": "Cavalo de lida (imobilizado, uso); terras da fazenda",
+      "agriculturalProduct": "Boi abatido → carne em estoque",
+      "investmentPropertyStatus": "PI → Imobilizado",
+      "propertyEvent": "Pasto arrendado ao vizinho volta a ser usado pela própria fazenda",
+      "cpcItems": "57(a), 60",
+      "classReferences": "15-17",
+      "reportEffect": "Ganho de VJ até a transferência vai ao resultado; o laudo vira custo atribuído no imobilizado",
+      "situationCount": 7,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 2,
+      "name": "Laticínios Vaca Mimosa",
+      "sector": "Pecuária leiteira",
+      "biologicalAsset": "Vacas em lactação e novilhas (de produção)",
+      "bearerPlantAndPpe": "Ordenhadeira; galpão (parte)",
+      "agriculturalProduct": "Leite na ordenha → estoque; queijo = estoque (processado)",
+      "investmentPropertyStatus": "Uso misto (separável)",
+      "propertyEvent": "Galpão: metade alugada, metade segue na ordenha; partes com matrícula própria → contabiliza separadamente",
+      "cpcItems": "10, 57(c), 61-62",
+      "classReferences": "8, 16-17",
+      "reportEffect": "Só a parte alugada é PI; diferença na transferência conforme item 62 (ver Pendências)",
+      "situationCount": 7,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 3,
+      "name": "Pé de Eucalipto Reflorestamento",
+      "sector": "Silvicultura (eucalipto)",
+      "biologicalAsset": "Floresta de eucalipto para corte (consumível)",
+      "bearerPlantAndPpe": "Eucaliptos quebra-vento; terra da floresta",
+      "agriculturalProduct": "Árvore cortada → toras em estoque",
+      "investmentPropertyStatus": "PI (permanece)",
+      "propertyEvent": "Terreno de valorização: diretoria decide vender sem obras → continua PI até a baixa",
+      "cpcItems": "57 (intenção não basta), 58",
+      "classReferences": "15, 18",
+      "reportEffect": "Ganho de VJ vai ao resultado (item 35); não é caixa",
+      "situationCount": 7,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 4,
+      "name": "Pomar Serra Gelada",
+      "sector": "Fruticultura (maçã, São Joaquim)",
+      "biologicalAsset": "Maçãs em desenvolvimento nas árvores (5C)",
+      "bearerPlantAndPpe": "Macieiras (planta portadora); câmara fria",
+      "agriculturalProduct": "Maçã colhida → estoque; suco = estoque (processado)",
+      "investmentPropertyStatus": "PI → Estoque",
+      "propertyEvent": "Terra de expansão: primeiro só a decisão de lotear (segue PI), depois início das obras (vira estoque)",
+      "cpcItems": "57(b), 60",
+      "classReferences": "15-17",
+      "reportEffect": "Ganho até o início das obras vai ao resultado; o laudo vira custo do estoque de lotes",
+      "situationCount": 6,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 5,
+      "name": "Grãos do Oeste",
+      "sector": "Grãos (soja e milho)",
+      "biologicalAsset": "Lavouras em crescimento (cultura anual, não é planta portadora)",
+      "bearerPlantAndPpe": "Colheitadeira; armazém; terras",
+      "agriculturalProduct": "Soja/milho colhidos → estoque; soja comprada de terceiro = estoque",
+      "investmentPropertyStatus": "Imobilizado → PI",
+      "propertyEvent": "Armazém desocupado e alugado a uma cerealista; deprecia até a data da mudança",
+      "cpcItems": "57(c), 61-62",
+      "classReferences": "16-17",
+      "reportEffect": "Excedente na transferência vai ao PL (AAP): o laudo otimista NÃO aumenta o lucro",
+      "situationCount": 7,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 6,
+      "name": "Ostras da Ilha",
+      "sector": "Maricultura (ostras, Florianópolis)",
+      "biologicalAsset": "Ostras em cultivo (exceção do custo no início)",
+      "bearerPlantAndPpe": "Lanternas, balsas, barco; rancho à beira-mar",
+      "agriculturalProduct": "Ostra colhida → estoque; peixe pescado em alto-mar = estoque",
+      "investmentPropertyStatus": "Imobilizado (uso misto)",
+      "propertyEvent": "Salinha do rancho alugada a um quiosque; não separável e parte própria significativa → todo imobilizado",
+      "cpcItems": "10",
+      "classReferences": "8",
+      "reportEffect": "Nenhum no balanço: imobilizado ao custo. O laudo é só informativo (ética)",
+      "situationCount": 6,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 7,
+      "name": "Vinícola Cachos de Videira",
+      "sector": "Vinícola",
+      "biologicalAsset": "Uvas em desenvolvimento nos cachos",
+      "bearerPlantAndPpe": "Videiras (planta portadora); barris; pousada e restaurante",
+      "agriculturalProduct": "Uva colhida → vai à vinificação; vinho = estoque (CPC 16)",
+      "investmentPropertyStatus": "Estoque → PI",
+      "propertyEvent": "Loteamento cancelado; terreno arrendado (operacional) a um vizinho. A pousada fica fora da PI (serviços significativos)",
+      "cpcItems": "57(d), 63-64; 12",
+      "classReferences": "7, 16-17",
+      "reportEffect": "Diferença entre VJ e valor contábil vai ao resultado: dilema mais forte",
+      "situationCount": 6,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    },
+    {
+      "id": 8,
+      "name": "Usina Doce Vale",
+      "sector": "Cana-de-açúcar",
+      "biologicalAsset": "Cana em pé, em crescimento",
+      "bearerPlantAndPpe": "Soqueira da cana (planta portadora, slide 53); máquinas",
+      "agriculturalProduct": "Cana colhida → moagem; açúcar e etanol = estoque",
+      "investmentPropertyStatus": "Uso misto (todo PI)",
+      "propertyEvent": "Galpão quase todo alugado; só uma salinha administrativa (insignificante) e não separável → todo PI. Passa a prestar vigilância/manutenção ao inquilino (insignificante)",
+      "cpcItems": "10, 11",
+      "classReferences": "7-8",
+      "reportEffect": "Ganho de VJ vai ao resultado (item 35); não é caixa",
+      "situationCount": 6,
+      "group": null,
+      "status": "Esqueleto aprovado"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "stage": 1,
+      "prompt": "Sobre ativo biológico e produto agrícola, de acordo com o CPC 29, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "Ativo biológico é o produto colhido de ativo biológico da entidade; produto agrícola é um animal ou uma planta vivos."
+        },
+        {
+          "letter": "b",
+          "text": "Ativo biológico é um animal ou uma planta vivos; produto agrícola é o produto colhido de ativo biológico da própria entidade e, após o processamento, deixa de ser produto agrícola."
+        },
+        {
+          "letter": "c",
+          "text": "Ativo biológico é um animal ou uma planta vivos; produto agrícola é o produto colhido de ativo biológico da entidade, inclusive depois de processado, como a uva transformada em vinho."
+        },
+        {
+          "letter": "d",
+          "text": "Ativo biológico é qualquer produto vegetal ou animal adquirido de terceiros, mesmo já colhido; produto agrícola é o produto colhido de ativo biológico da própria entidade."
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "Item 5 do CPC 29. C: só estar vivo não basta (U4 s. 6, 9-12); A: comprado de terceiros é estoque (s. 16); D: processamento fora do CPC 29 (s. 15).",
+      "rationales": {
+        "a": "Os conceitos foram invertidos. CPC 29, item 5: ativo biológico é um animal e/ou uma planta vivos; produção agrícola é o produto colhido de ativo biológico da entidade.",
+        "b": "CPC 29, item 5: ativo biológico é um animal e/ou uma planta vivos; produção agrícola é o produto colhido de ativo biológico da entidade. CPC 29, item 3: o Pronunciamento não trata do processamento após a colheita, como a transformação de uvas em vinho.",
+        "c": "A definição de ativo biológico está correta, mas o produto agrícola deixa de estar no alcance do CPC 29 após o processamento. CPC 29, item 3, exemplifica a transformação de uvas em vinho.",
+        "d": "A definição de produto agrícola está correta, mas um produto colhido adquirido de terceiros não é ativo biológico da entidade; é estoque. CPC 29, item 5; CPC 16, item 6."
+      }
+    },
+    {
+      "id": 2,
+      "stage": 1,
+      "prompt": "Sobre plantas portadoras, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "São mensuradas a valor justo menos despesa de venda, como os demais ativos biológicos."
+        },
+        {
+          "letter": "b",
+          "text": "Árvores cultivadas para madeira e culturas anuais, como o milho, são plantas portadoras."
+        },
+        {
+          "letter": "c",
+          "text": "São plantas vivas utilizadas na produção de produtos agrícolas, cultivadas para produzir por mais de um período e com probabilidade remota de serem vendidas como produto agrícola; são registradas no imobilizado (CPC 27), enquanto o produto em desenvolvimento nelas é ativo biológico (CPC 29)."
+        },
+        {
+          "letter": "d",
+          "text": "A venda das plantas como lenha, ao final da vida produtiva, impede que sejam classificadas como plantas portadoras."
+        }
+      ],
+      "answer": "c",
+      "generalRationale": "CPC 29 itens 5, 5A, 5B, 5C. B: madeira e cultura anual não são planta portadora (5A); D: sucata/lenha não impede (5B).",
+      "rationales": {
+        "a": "CPC 29, item 1: aplica-se a “(a) ativos biológicos, exceto plantas portadoras”. CPC 27, item 22A: “Plantas portadoras devem ser contabilizadas da mesma forma de um item do imobilizado construído pela própria entidade (...).” A planta portadora fica no imobilizado, pelo custo.",
+        "b": "CPC 29, item 5A: “Não são plantas portadoras: (a) plantas cultivadas para serem colhidas como produto agrícola (por exemplo, árvores cultivadas para o uso como madeira); (...) (c) culturas anuais (por exemplo, milho e trigo).”",
+        "c": "CPC 29, item 5: “Planta portadora é uma planta viva que: (a) é utilizada na produção ou no fornecimento de produtos agrícolas; (b) é cultivada para produzir frutos por mais de um período; e (c) tem uma probabilidade remota de ser vendida como produto agrícola, exceto para eventual venda como sucata.” CPC 29, item 2: não se aplica a “(b) plantas portadoras relacionadas com a atividade agrícola (ver CPC 27). Contudo, este pronunciamento aplica-se ao produto dessas plantas portadoras”. CPC 29, item 5C: “Produto em desenvolvimento de planta portadora é ativo biológico.”",
+        "d": "CPC 29, item 5B: “Quando as plantas portadoras não são mais utilizadas para a produção de produtos, elas podem ser cortadas e vendidas como sucata, por exemplo, para uso como lenha. Essas vendas de sucata incidentais não impedem a planta de satisfazer à definição de planta portadora.”"
+      }
+    },
+    {
+      "id": 3,
+      "stage": 1,
+      "prompt": "Segundo o CPC 29, um mesmo animal pode ter classificações diferentes conforme sua finalidade. Relacione:\n(1) Vivo e mantido para engorda e venda\n(2) Vivo e mantido para uso nas atividades da entidade\n(3) Abatido, quando antes era ativo biológico da entidade\n(4) Comprado de terceiro já abatido\n( ) Estoque (CPC 16)\n( ) Ativo biológico (CPC 29)\n( ) Produto agrícola (CPC 29)\n( ) Imobilizado (CPC 27)",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "4, 1, 3, 2"
+        },
+        {
+          "letter": "b",
+          "text": "3, 1, 4, 2"
+        },
+        {
+          "letter": "c",
+          "text": "4, 2, 3, 1"
+        },
+        {
+          "letter": "d",
+          "text": "1, 4, 3, 2"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "Slides 20-21 da U4 (boi e eucalipto). Atenção: mesma lógica da Q10 da lista 4-1 (jumento) — escolhida pela professora mesmo assim.",
+      "rationales": {
+        "a": "(4, 1, 3, 2).\n• Estoque = (4) comprado já abatido: CPC 16, item 6: “Estoques são ativos: (a) mantidos para venda no curso normal dos negócios; (b) em processo de produção para venda; ou (c) na forma de materiais ou suprimentos a serem consumidos ou transformados no processo de produção ou na prestação de serviços.” Não é produto agrícola porque não foi colhido de ativo biológico da entidade (CPC 29, item 5: “Produção agrícola é o produto colhido de ativo biológico da entidade.”)\n• Ativo biológico = (1) vivo para engorda e venda: CPC 29, item 5: “Ativo biológico é um animal e/ou uma planta, vivos.” CPC 29, item 5: “Atividade agrícola é o gerenciamento da transformação biológica e da colheita de ativos biológicos para venda ou para conversão em produtos agrícolas ou em ativos biológicos adicionais, pela entidade.”\n• Produto agrícola = (3) abatido, antes ativo biológico da entidade: CPC 29, item 5: “Colheita é a extração do produto de ativo biológico ou a cessação da vida desse ativo biológico.” CPC 29, item 5: “Produção agrícola é o produto colhido de ativo biológico da entidade.”\n• Imobilizado = (2) vivo para uso nas atividades: CPC 27, item 6: ativo imobilizado é o item tangível que “é mantido para uso na produção ou fornecimento de mercadorias ou serviços, para aluguel a outros, ou para fins administrativos” e que “se espera utilizar por mais de um período.”",
+        "b": "Troca estoque e produto agrícola: o animal comprado já abatido não é produto colhido de ativo biológico da entidade (CPC 29, item 5).",
+        "c": "Troca ativo biológico e imobilizado: o animal mantido para uso não é objeto de atividade agrícola (CPC 29, item 5); é imobilizado (CPC 27, item 6).",
+        "d": "Classifica o animal vivo para engorda como estoque e o comprado abatido como ativo biológico; ver CPC 29, item 5, e CPC 16, item 6."
+      }
+    },
+    {
+      "id": 4,
+      "stage": 1,
+      "prompt": "Relacione a finalidade do imóvel à sua classificação: (I) Imobilizado (P) Propriedade para investimento (E) Estoque\n( ) Imóvel usado na produção ou na administração da entidade.\n( ) Imóvel arrendado a terceiros em arrendamento operacional.\n( ) Terreno mantido para valorização de capital ou com uso futuro indeterminado.\n( ) Imóvel em construção ou desenvolvimento para venda no curso normal dos negócios.\n( ) Imóvel ocupado por empregados, ainda que paguem aluguel.\n( ) Imóvel em que a entidade presta serviços significativos aos ocupantes, como um hotel administrado pelo proprietário.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "I, P, P, E, I, I"
+        },
+        {
+          "letter": "b",
+          "text": "I, P, P, E, P, P"
+        },
+        {
+          "letter": "c",
+          "text": "I, P, E, E, I, P"
+        },
+        {
+          "letter": "d",
+          "text": "P, P, P, E, I, I"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 28 itens 8, 9 e 12. A PI é apresentada no ANC – Investimentos.",
+      "rationales": {
+        "a": "(I, P, P, E, I, I).\n• Uso na produção ou administração = I: CPC 28, item 5: “Propriedade para investimento é a propriedade (terreno ou edifício – ou parte de edifício – ou ambos) mantida (...) para auferir aluguel ou para valorização do capital ou para ambas e, não, para: (a) uso na produção ou fornecimento de bens ou serviços ou para finalidades administrativas; ou (b) venda no curso ordinário do negócio.” O CPC 27 se aplica à propriedade ocupada pelo proprietário (CPC 28, item 7).\n• Arrendado em arrendamento operacional = P: CPC 28, item 8(c): é PI o “edifício que seja propriedade da entidade (...) e que seja arrendado sob um ou mais arrendamentos operacionais”.\n• Terreno para valorização ou uso indeterminado = P: CPC 28, item 8: são PI “(a) terrenos mantidos para valorização de capital a longo prazo e não para venda a curto prazo no curso ordinário dos negócios; (b) terrenos mantidos para futuro uso correntemente indeterminado (...)”.\n• Em desenvolvimento para venda = E: CPC 28, item 9(a): não é PI a “propriedade destinada à venda no decurso ordinário das atividades ou em vias de construção ou desenvolvimento para tal venda (ver CPC 16 – Estoques)”.\n• Ocupado por empregados = I: CPC 28, item 9(c): não é PI a “propriedade ocupada pelo proprietário (ver CPC 27 e CPC 06), incluindo (...) propriedade ocupada por empregados (paguem ou não aluguéis a taxas de mercado) (...)”.\n• Serviços significativos (hotel) = I: CPC 28, item 12: “(...) se a entidade possui e administra um hotel, os serviços proporcionados aos hóspedes são significativos para o acordo como um todo. Por isso, o hotel administrado pelo proprietário é propriedade ocupada pelo proprietário e não propriedade para investimento.”\nObs.: CPC 28, item 7: “As propriedades para investimento são mantidas para obter rendas ou para valorização do capital ou para ambas, e por isso classificadas no subgrupo Investimentos, dentro do Ativo Não Circulante.”",
+        "b": "Os dois últimos não são PI: CPC 28, itens 9(c) e 12.",
+        "c": "Terreno para valorização é PI, não estoque (item 8(a)); hotel do proprietário é imobilizado (item 12).",
+        "d": "Imóvel usado na produção ou na administração não é PI (item 5)."
+      }
+    },
+    {
+      "id": 5,
+      "stage": 1,
+      "prompt": "Julgue as afirmativas em V ou F:\nI. Se as partes de um imóvel de uso misto podem ser vendidas separadamente, cada parte é contabilizada no seu grupo.\nII. Se as partes não podem ser vendidas separadamente, o imóvel todo é propriedade para investimento quando a parte de uso próprio é insignificante.\nIII. Se as partes não podem ser vendidas separadamente e a parte de uso próprio é significativa, o imóvel todo é imobilizado.\nIV. Serviços de segurança e manutenção prestados aos inquilinos descaracterizam a propriedade para investimento.\nV. O hotel administrado pelo próprio dono é imobilizado, pois os serviços prestados aos hóspedes são significativos.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, V, V, F, V"
+        },
+        {
+          "letter": "b",
+          "text": "V, F, V, F, V"
+        },
+        {
+          "letter": "c",
+          "text": "V, V, F, V, V"
+        },
+        {
+          "letter": "d",
+          "text": "F, V, V, F, F"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 28 itens 10-12. IV é falsa: serviços insignificantes (item 11).",
+      "rationales": {
+        "a": "(V, V, V, F, V).\nI – V. CPC 28, item 10: “Se essas partes puderem ser vendidas separadamente (ou arrendadas separadamente sob arrendamento financeiro), a entidade contabiliza as partes separadamente.”\nII – V. CPC 28, item 10: “Se as partes não puderem ser vendidas separadamente, a propriedade só é propriedade para investimento se uma parte insignificante for mantida para uso na produção ou fornecimento de bens ou serviços ou para finalidades administrativas.”\nIII – V. Mesmo item 10: se a parte de uso próprio não é insignificante, a propriedade não é PI; o imóvel todo segue no imobilizado.\nIV – F. CPC 28, item 11: “A entidade trata tal propriedade como propriedade para investimento se os serviços forem insignificantes em relação ao acordo como um todo. Um exemplo é quando o proprietário de edifício de escritórios proporciona serviços de segurança e de manutenção aos arrendatários que ocupam o edifício.”\nV – V. CPC 28, item 12: “(...) se a entidade possui e administra um hotel, os serviços proporcionados aos hóspedes são significativos para o acordo como um todo. Por isso, o hotel administrado pelo proprietário é propriedade ocupada pelo proprietário e não propriedade para investimento.”",
+        "b": "Considera falsa a II, que é o próprio texto do item 10.",
+        "c": "Considera falsa a III e verdadeira a IV; ver itens 10 e 11.",
+        "d": "Considera falsas a I e a V; ver itens 10 e 12."
+      }
+    },
+    {
+      "id": 6,
+      "stage": 2,
+      "prompt": "Relacione cada ativo ao seu critério de mensuração:\n(1) Ativo biológico (2) Produto agrícola (3) Planta portadora (4) Propriedade para investimento (5) Estoque\n( ) Custo menos depreciação acumulada e perdas por redução ao valor recuperável.\n( ) Valor justo menos despesa de venda, no reconhecimento inicial e em cada data de balanço; as variações vão ao resultado.\n( ) Custo no reconhecimento inicial; depois, valor justo (sem depreciação, variações no resultado) ou custo, por política única para todos os itens.\n( ) Valor justo menos despesa de venda no ponto de colheita; esse valor passa a ser o custo.\n( ) Custo ou valor realizável líquido, dos dois o menor.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "3, 1, 4, 2, 5"
+        },
+        {
+          "letter": "b",
+          "text": "1, 3, 4, 2, 5"
+        },
+        {
+          "letter": "c",
+          "text": "3, 1, 2, 4, 5"
+        },
+        {
+          "letter": "d",
+          "text": "1, 2, 4, 3, 5"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "Movida da etapa 1 para a 2. U4 s. 25, 41, 44, 53; U5 s. 11-14.",
+      "rationales": {
+        "a": "(3, 1, 4, 2, 5).\n• Custo menos depreciação e impairment = (3) planta portadora: CPC 27, item 22A: “Plantas portadoras devem ser contabilizadas da mesma forma de um item do imobilizado construído pela própria entidade (...).” CPC 27, item 30: “Após o reconhecimento como ativo, um item do ativo imobilizado deve ser apresentado ao custo menos qualquer depreciação e perda por redução ao valor recuperável acumuladas.”\n• VJ − DV no início e em cada balanço = (1) ativo biológico: CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).” CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.”\n• Custo inicial; depois VJ ou custo, política única = (4) PI: CPC 28, item 20: “A propriedade para investimento deve ser inicialmente mensurada pelo seu custo. Os custos de transação devem ser incluídos na mensuração inicial.” CPC 28, item 30: “(...) a entidade deve escolher como sua política contábil o método do valor justo (...) ou o método do custo (...), e deve aplicar essa política a todas as suas propriedades para investimento.”\n• VJ − DV na colheita, que vira custo = (2) produto agrícola: CPC 29, item 13: “O produto agrícola colhido de ativos biológicos da entidade deve ser mensurado ao valor justo, menos a despesa de venda, no momento da colheita. O valor assim atribuído representa o custo, no momento da aplicação do Pronunciamento Técnico CPC 16 – Estoques (...).”\n• Custo ou VRL, o menor = (5) estoque: CPC 16, item 9: “Os estoques objeto deste Pronunciamento devem ser mensurados pelo valor de custo ou pelo valor realizável líquido, dos dois o menor.”",
+        "b": "Inverte ativo biológico e planta portadora: a planta portadora está fora do CPC 29 (item 1(a)) e o ativo biológico não é depreciado (item 12).",
+        "c": "Troca PI e produto agrícola: PI é inicialmente mensurada pelo custo (CPC 28, item 20); o produto agrícola, a VJ − DV na colheita (CPC 29, item 13).",
+        "d": "Troca planta portadora, ativo biológico e produto agrícola; ver CPC 27, item 30, e CPC 29, itens 12 e 13."
+      }
+    },
+    {
+      "id": 7,
+      "stage": 2,
+      "prompt": "Julgue as afirmativas em V ou F, de acordo com o CPC 29:\nI. O ativo biológico é reconhecido quando a entidade o controla em razão de eventos passados, é provável que benefícios econômicos futuros fluam para ela e seu valor justo ou custo puder ser mensurado confiavelmente.\nII. No reconhecimento inicial, o ativo biológico é mensurado pelo valor pago na aquisição.\nIII. A diferença entre o valor pago e o valor justo menos a despesa de venda, no reconhecimento inicial, vai ao resultado e pode ser ganho ou perda.\nIV. O ganho ou a perda no reconhecimento inicial é registrado diretamente no patrimônio líquido, em ajustes de avaliação patrimonial.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, F, V, F"
+        },
+        {
+          "letter": "b",
+          "text": "V, V, F, F"
+        },
+        {
+          "letter": "c",
+          "text": "F, F, V, V"
+        },
+        {
+          "letter": "d",
+          "text": "V, F, F, V"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 29 itens 10, 12, 26-27.",
+      "rationales": {
+        "a": "(V, F, V, F).\nI – V. CPC 29, item 10: “A entidade deve reconhecer um ativo biológico ou produto agrícola quando, e somente quando: (a) controla o ativo como resultado de eventos passados; (b) for provável que benefícios econômicos futuros associados com o ativo fluirão para a entidade; e (c) o valor justo ou o custo do ativo puder ser mensurado confiavelmente.”\nII – F. CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).”\nIII – V. CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.” CPC 29, item 27: “A perda pode ocorrer no reconhecimento inicial de ativo biológico porque as despesas de venda são deduzidas na determinação do valor justo. O ganho pode originar-se no reconhecimento inicial (...).”\nIV – F. O ganho ou a perda vai ao resultado, não ao PL: CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.”",
+        "b": "Considera verdadeira a II (valor pago) e falsa a III.",
+        "c": "Considera falsa a I e verdadeira a IV.",
+        "d": "Considera falsa a III e verdadeira a IV (o ganho/perda inicial vai ao resultado, item 26)."
+      }
+    },
+    {
+      "id": 8,
+      "stage": 2,
+      "prompt": "Sobre a mensuração do ativo biológico, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "A entidade pode escolher livremente entre valor justo e custo, como na propriedade para investimento."
+        },
+        {
+          "letter": "b",
+          "text": "Na falta de mercado ativo para o ativo idêntico, a entidade deve mensurar o ativo ao custo."
+        },
+        {
+          "letter": "c",
+          "text": "A mensuração ao custo só é admitida no reconhecimento inicial, quando as alternativas de valor justo forem claramente não confiáveis; se o valor justo passar a ser mensurável, a entidade migra para valor justo menos despesa de venda e não pode voltar ao custo."
+        },
+        {
+          "letter": "d",
+          "text": "Depois de migrar para o valor justo, a entidade pode voltar ao custo se a mensuração ficar difícil novamente."
+        }
+      ],
+      "answer": "c",
+      "generalRationale": "CPC 29 itens 30-31. A confunde com a política do CPC 28; B ignora os níveis 2 e 3 da hierarquia (espécie similar, fluxo de caixa).",
+      "rationales": {
+        "a": "No CPC 29 não há escolha: o ativo biológico é mensurado a VJ − DV (CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).”), e o custo é exceção (item 30). A escolha entre VJ e custo é do CPC 28 (CPC 28, item 30: “(...) a entidade deve escolher como sua política contábil o método do valor justo (...) ou o método do custo (...), e deve aplicar essa política a todas as suas propriedades para investimento.”)",
+        "b": "A falta de mercado ativo para o ativo idêntico não leva direto ao custo: CPC 29, item 30: a premissa do valor justo “pode ser rejeitada no caso de ativo biológico cujo valor deveria ser cotado pelo mercado, porém, este não o tem disponível e as alternativas para mensurá-los não são, claramente, confiáveis. Em tais situações, o ativo biológico deve ser mensurado ao custo (...). Quando o valor justo de tal ativo biológico se tornar mensurável de forma confiável, a entidade deve mensurá-lo ao seu valor justo menos as despesas de venda.” CPC 46, item 72: “A hierarquia de valor justo dá a mais alta prioridade a preços cotados (não ajustados) em mercados ativos para ativos ou passivos idênticos (informações de Nível 1) e a mais baixa prioridade a dados não observáveis (informações de Nível 3).” Antes do custo, usam-se informações de níveis 2 e 3.",
+        "c": "CPC 29, item 30: a premissa do valor justo “pode ser rejeitada no caso de ativo biológico cujo valor deveria ser cotado pelo mercado, porém, este não o tem disponível e as alternativas para mensurá-los não são, claramente, confiáveis. Em tais situações, o ativo biológico deve ser mensurado ao custo (...). Quando o valor justo de tal ativo biológico se tornar mensurável de forma confiável, a entidade deve mensurá-lo ao seu valor justo menos as despesas de venda.” CPC 29, item 31: “A presunção do item 30 pode ser rejeitada somente no reconhecimento inicial. A entidade que tenha mensurado previamente o ativo biológico ao seu valor justo, menos a despesa de venda, continuará a mensurá-lo assim até a sua venda.”",
+        "d": "CPC 29, item 31: “A presunção do item 30 pode ser rejeitada somente no reconhecimento inicial. A entidade que tenha mensurado previamente o ativo biológico ao seu valor justo, menos a despesa de venda, continuará a mensurá-lo assim até a sua venda.”"
+      }
+    },
+    {
+      "id": 9,
+      "stage": 2,
+      "prompt": "Assinale a alternativa correta, de acordo com o CPC 28.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "Se a entidade adotar o método do valor justo, a propriedade para investimento é reconhecida inicialmente pelo valor justo."
+        },
+        {
+          "letter": "b",
+          "text": "O custo inicial compreende o preço de compra e os custos de transação, como honorários legais e impostos de transferência; não inclui custos de início de operação nem perdas operacionais antes da ocupação prevista."
+        },
+        {
+          "letter": "c",
+          "text": "A entidade pode adotar o valor justo para algumas propriedades para investimento e o custo para outras."
+        },
+        {
+          "letter": "d",
+          "text": "No método do valor justo, a propriedade para investimento continua sendo depreciada."
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "CPC 28 itens 20-21, 23, 30. A: inicial sempre pelo custo; C: política única; D: sem depreciação no VJ.",
+      "rationales": {
+        "a": "CPC 28, item 20: “A propriedade para investimento deve ser inicialmente mensurada pelo seu custo. Os custos de transação devem ser incluídos na mensuração inicial.”",
+        "b": "CPC 28, item 20: “A propriedade para investimento deve ser inicialmente mensurada pelo seu custo. Os custos de transação devem ser incluídos na mensuração inicial.” CPC 28, item 21: “O custo de uma propriedade para investimento comprada compreende o seu preço de compra e qualquer dispêndio diretamente atribuível. Os dispêndios diretamente atribuíveis incluem, por exemplo, as remunerações profissionais de serviços legais, impostos de transferência de propriedade e outros custos de transação.” CPC 28, item 23: “O custo de uma propriedade para investimento não é aumentado por: (a) custos de início de atividades (start-up) (...); (b) perdas operacionais incorridas antes de a propriedade para investimento ter atingido o nível de ocupação previsto (...).”",
+        "c": "CPC 28, item 30: “(...) a entidade deve escolher como sua política contábil o método do valor justo (...) ou o método do custo (...), e deve aplicar essa política a todas as suas propriedades para investimento.”",
+        "d": "CPC 28, item 33: “Após o reconhecimento inicial, a entidade que escolhe o método do valor justo deve mensurar todas as suas propriedades para investimento pelo valor justo (...).” CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.” CPC 28, item 56: a entidade que escolher o modelo do custo mensura a PI “(c) de acordo com os requisitos do CPC 27 para o modelo do custo” — a depreciação só existe no método do custo."
+      }
+    },
+    {
+      "id": 10,
+      "stage": 2,
+      "prompt": "No reconhecimento inicial, a planta portadora e o produto que nela se desenvolve são mensurados, respectivamente:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "ambos a valor justo menos despesa de venda"
+        },
+        {
+          "letter": "b",
+          "text": "a planta pelo custo, no imobilizado (CPC 27); o produto em desenvolvimento, a valor justo menos despesa de venda, como ativo biológico (CPC 29)"
+        },
+        {
+          "letter": "c",
+          "text": "a planta a valor justo menos despesa de venda; o produto pelo custo"
+        },
+        {
+          "letter": "d",
+          "text": "ambos pelo custo, no imobilizado"
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "CPC 29 itens 5C e alcance; CPC 27. Reforça a formação do pomar, do vinhedo e do canavial.",
+      "rationales": {
+        "a": "A planta portadora está fora do CPC 29: CPC 29, item 1: aplica-se a “(a) ativos biológicos, exceto plantas portadoras”. CPC 29, item 2: não se aplica a “(b) plantas portadoras relacionadas com a atividade agrícola (ver CPC 27). Contudo, este pronunciamento aplica-se ao produto dessas plantas portadoras”.",
+        "b": "CPC 27, item 22A: “Plantas portadoras devem ser contabilizadas da mesma forma de um item do imobilizado construído pela própria entidade (...).” CPC 29, item 5C: “Produto em desenvolvimento de planta portadora é ativo biológico.” CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).”",
+        "c": "Inverte os critérios: ver CPC 27, item 22A, e CPC 29, itens 5C e 12.",
+        "d": "O produto em desenvolvimento é ativo biológico, não imobilizado: CPC 29, item 5C: “Produto em desenvolvimento de planta portadora é ativo biológico.” CPC 27, item 3(b): “Este pronunciamento aplica-se às plantas portadoras, mas não se aplica aos produtos dessas plantas portadoras.”"
+      }
+    },
+    {
+      "id": 11,
+      "stage": 3,
+      "prompt": "Julgue em V ou F, de acordo com o CPC 29:\nI. Ao final de cada período, o ativo biológico é remensurado a valor justo menos despesa de venda, e a variação vai ao resultado.\nII. Gastos com ração e medicamentos são capitalizados no ativo biológico e depreciados ao longo de sua vida útil.\nIII. Na prática, as empresas apresentam esses gastos junto com o ganho ou a perda de valor justo do ativo biológico.\nIV. O ganho de valor justo com o crescimento do animal representa entrada de caixa no período.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, F, V, F"
+        },
+        {
+          "letter": "b",
+          "text": "V, V, F, F"
+        },
+        {
+          "letter": "c",
+          "text": "F, F, V, V"
+        },
+        {
+          "letter": "d",
+          "text": "V, F, F, V"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 29 item 26. A IV prepara o 'lucro ≠ caixa' da etapa 5.",
+      "rationales": {
+        "a": "(V, F, V, F).\nI – V. CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).” CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.”\nII – F. O ativo biológico é mensurado a VJ − DV (item 12), e não pelo custo acumulado; não há depreciação, que só existe na exceção do custo (item 30). O CPC 29 não trata desses gastos: eles vão ao resultado quando incorridos (U4 slide 31).\nIII – V. Prática descrita no slide 31 da U4 (não há item específico no CPC 29): os gastos são apresentados junto ao ganho/perda de valor justo.\nIV – F. CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.” A remensuração é ganho econômico reconhecido no resultado, sem recebimento de caixa.",
+        "b": "Considera verdadeira a II e falsa a III.",
+        "c": "Considera falsa a I (contraria os itens 12 e 26) e verdadeira a IV.",
+        "d": "Considera falsa a III e verdadeira a IV."
+      }
+    },
+    {
+      "id": 12,
+      "stage": 3,
+      "prompt": "Sobre o produto agrícola, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "Depois de transferido para o estoque, o produto agrícola continua sendo remensurado a valor justo a cada balanço."
+        },
+        {
+          "letter": "b",
+          "text": "No ponto de colheita, o produto agrícola é mensurado a valor justo menos despesa de venda; esse valor passa a ser o custo do estoque, que segue o CPC 16."
+        },
+        {
+          "letter": "c",
+          "text": "Na colheita, o produto agrícola é registrado pelo custo de produção acumulado."
+        },
+        {
+          "letter": "d",
+          "text": "Só há colheita quando a planta morre; por isso, a maçã colhida de uma macieira viva não é produto agrícola."
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "CPC 29 itens 5 e 13. D: colheita é extração do produto ou fim da vida do ativo.",
+      "rationales": {
+        "a": "CPC 29, item 13: “O produto agrícola colhido de ativos biológicos da entidade deve ser mensurado ao valor justo, menos a despesa de venda, no momento da colheita. O valor assim atribuído representa o custo, no momento da aplicação do Pronunciamento Técnico CPC 16 – Estoques (...).” Depois disso aplica-se o CPC 16 (CPC 29, item 3), e o estoque não é remensurado a valor justo.",
+        "b": "CPC 29, item 13: “O produto agrícola colhido de ativos biológicos da entidade deve ser mensurado ao valor justo, menos a despesa de venda, no momento da colheita. O valor assim atribuído representa o custo, no momento da aplicação do Pronunciamento Técnico CPC 16 – Estoques (...).” CPC 29, item 32: “Em todos os casos, a entidade deve mensurar o produto agrícola no momento da colheita ao seu valor justo, menos a despesa de venda.”",
+        "c": "CPC 29, item 32: “Em todos os casos, a entidade deve mensurar o produto agrícola no momento da colheita ao seu valor justo, menos a despesa de venda.”",
+        "d": "CPC 29, item 5: “Colheita é a extração do produto de ativo biológico ou a cessação da vida desse ativo biológico.”"
+      }
+    },
+    {
+      "id": 13,
+      "stage": 3,
+      "prompt": "Na venda de um ativo biológico mensurado a valor justo menos despesa de venda, a entidade registra:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "a receita pelo valor de venda, o custo pelo valor contábil do ativo (última mensuração a VJ menos despesa de venda) e a despesa de venda separadamente"
+        },
+        {
+          "letter": "b",
+          "text": "apenas a receita, líquida da despesa de venda, sem baixar o ativo"
+        },
+        {
+          "letter": "c",
+          "text": "o ganho na venda diretamente no patrimônio líquido"
+        },
+        {
+          "letter": "d",
+          "text": "o custo pelo valor original de aquisição do animal"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "Exemplo do boi (slides 34-35).",
+      "rationales": {
+        "a": "O ativo está registrado a VJ − DV (CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).”); na venda, ele é baixado pelo valor contábil — CPC 29, item 50: “A entidade deve apresentar a conciliação das mudanças no valor contábil de ativos biológicos entre o início e o fim do período corrente.” A conciliação inclui, entre outros, “(c) reduções atribuíveis às vendas”. A despesa de venda é registrada à parte (U4 slides 34-35).",
+        "b": "O ativo vendido tem de ser baixado: CPC 29, item 50: “A entidade deve apresentar a conciliação das mudanças no valor contábil de ativos biológicos entre o início e o fim do período corrente.” A conciliação inclui, entre outros, “(c) reduções atribuíveis às vendas”.",
+        "c": "Ganhos e perdas do ativo biológico vão ao resultado, não ao PL: CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.”",
+        "d": "O custo da venda é o valor contábil (última mensuração a VJ − DV, item 12), e não o valor original de aquisição."
+      }
+    },
+    {
+      "id": 14,
+      "stage": 3,
+      "prompt": "Depois de formada, a planta portadora:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "é remensurada a valor justo menos despesa de venda a cada balanço"
+        },
+        {
+          "letter": "b",
+          "text": "é depreciada ao longo da vida produtiva, enquanto os frutos em desenvolvimento são remensurados a valor justo menos despesa de venda até a colheita"
+        },
+        {
+          "letter": "c",
+          "text": "não é depreciada, porque é ativo biológico"
+        },
+        {
+          "letter": "d",
+          "text": "é transferida para o estoque a cada safra"
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "CPC 27 + CPC 29 item 5C. Lista 4-2, Q6 e Q7.",
+      "rationales": {
+        "a": "CPC 29, item 2: não se aplica a “(b) plantas portadoras relacionadas com a atividade agrícola (ver CPC 27). Contudo, este pronunciamento aplica-se ao produto dessas plantas portadoras”. CPC 27, item 30: “Após o reconhecimento como ativo, um item do ativo imobilizado deve ser apresentado ao custo menos qualquer depreciação e perda por redução ao valor recuperável acumuladas.”",
+        "b": "CPC 27, item 30: “Após o reconhecimento como ativo, um item do ativo imobilizado deve ser apresentado ao custo menos qualquer depreciação e perda por redução ao valor recuperável acumuladas.” CPC 27, item 50: “O valor depreciável de um ativo deve ser apropriado de forma sistemática ao longo da sua vida útil estimada.” CPC 29, item 5C: “Produto em desenvolvimento de planta portadora é ativo biológico.” CPC 29, item 12: “O ativo biológico deve ser mensurado ao valor justo menos a despesa de venda no momento do reconhecimento inicial e no final de cada período de competência, exceto para os casos descritos no item 30 (...).”",
+        "c": "A planta portadora não é ativo biológico do CPC 29 (CPC 29, item 1: aplica-se a “(a) ativos biológicos, exceto plantas portadoras”.) e é depreciada: CPC 27, item 50: “O valor depreciável de um ativo deve ser apropriado de forma sistemática ao longo da sua vida útil estimada.”",
+        "d": "Só o produto colhido vai para estoque (CPC 29, item 13: “O produto agrícola colhido de ativos biológicos da entidade deve ser mensurado ao valor justo, menos a despesa de venda, no momento da colheita. O valor assim atribuído representa o custo, no momento da aplicação do Pronunciamento Técnico CPC 16 – Estoques (...).”); a planta continua produzindo por mais de um período (CPC 29, item 5: “Planta portadora é uma planta viva que: (a) é utilizada na produção ou no fornecimento de produtos agrícolas; (b) é cultivada para produzir frutos por mais de um período; e (c) tem uma probabilidade remota de ser vendida como produto agrícola, exceto para eventual venda como sucata.”)"
+      }
+    },
+    {
+      "id": 15,
+      "stage": 3,
+      "prompt": "Julgue em V ou F, considerando a propriedade para investimento mensurada pelo método do valor justo:\nI. Os ganhos e as perdas de valor justo vão ao resultado do período.\nII. A propriedade é depreciada e também ajustada ao valor justo.\nIII. O ganho de valor justo aumenta o lucro e, por isso, aumenta o caixa do período.\nIV. A receita de aluguel do arrendamento operacional é reconhecida no resultado.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, F, V, F"
+        },
+        {
+          "letter": "b",
+          "text": "V, F, F, V"
+        },
+        {
+          "letter": "c",
+          "text": "F, V, F, V"
+        },
+        {
+          "letter": "d",
+          "text": "V, V, F, F"
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "CPC 28 item 35. A III antecipa o laudo A × B da etapa 5.",
+      "rationales": {
+        "b": "(V, F, F, V).\nI – V. CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.”\nII – F. CPC 28, item 33: “Após o reconhecimento inicial, a entidade que escolhe o método do valor justo deve mensurar todas as suas propriedades para investimento pelo valor justo (...).” CPC 28, item 56: a entidade que escolher o modelo do custo mensura a PI “(c) de acordo com os requisitos do CPC 27 para o modelo do custo” — a depreciação só existe no método do custo.\nIII – F. CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.” O ganho de valor justo aumenta o lucro, mas não há entrada de caixa.\nIV – V. CPC 06 (R2), item 81 (paráfrase): o arrendador reconhece os recebimentos de arrendamento operacional como receita, pelo método linear ou outra base sistemática. CPC 28, item 7: “As propriedades para investimento são mantidas para obter rendas ou para valorização do capital ou para ambas, e por isso classificadas no subgrupo Investimentos, dentro do Ativo Não Circulante.”",
+        "a": "Considera verdadeira a III e falsa a IV.",
+        "c": "Considera falsa a I (contraria o item 35) e verdadeira a II.",
+        "d": "Considera verdadeira a II e falsa a IV."
+      }
+    },
+    {
+      "id": 16,
+      "stage": 4,
+      "prompt": "Julgue em V ou F, de acordo com o CPC 29:\nI. Perdas de ativo biológico por morte, pragas ou clima reduzem seu valor justo menos despesa de venda e são reconhecidas no resultado.\nII. A subvenção condicionada a cultivar por 5 anos, com devolução integral se o cultivo for interrompido, é reconhecida no resultado proporcionalmente a cada ano.\nIII. A subvenção incondicional relacionada a ativo biológico mensurado a valor justo menos despesa de venda é reconhecida no resultado quando se tornar recebível.\nIV. Se o ativo biológico estiver mensurado ao custo, a subvenção segue o CPC 07.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, F, V, V"
+        },
+        {
+          "letter": "b",
+          "text": "V, V, F, V"
+        },
+        {
+          "letter": "c",
+          "text": "F, F, V, V"
+        },
+        {
+          "letter": "d",
+          "text": "V, F, V, F"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 29 itens 26, 34-35.",
+      "rationales": {
+        "a": "(V, F, V, V).\nI – V. CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.”\nII – F. CPC 29, item 36: “(...) uma subvenção pode requerer que a entidade agrícola cultive durante cinco anos em determinada localidade, devendo devolvê-la, integralmente, se o cultivo se der em período inferior. Nesse caso, a subvenção não pode ser reconhecida no resultado antes de se passarem os cinco anos.”\nIII – V. CPC 29, item 34: “A subvenção governamental incondicional relacionada a um ativo biológico mensurado ao seu valor justo, menos a despesa de venda, deve ser reconhecida no resultado do período quando, e somente quando, se tornar recebível.”\nIV – V. CPC 29, item 37: “Se a subvenção governamental estiver relacionada com ativo biológico mensurado ao custo menos qualquer depreciação ou perda irrecuperável acumuladas (ver item 30), o Pronunciamento Técnico CPC 07 – Subvenção e Assistência Governamentais deve ser aplicado.”",
+        "b": "Considera verdadeira a II e falsa a III.",
+        "c": "Considera falsa a I (contraria o item 26).",
+        "d": "Considera falsa a IV (contraria o item 37)."
+      }
+    },
+    {
+      "id": 17,
+      "stage": 4,
+      "prompt": "De acordo com o CPC 28, a situação que NÃO evidencia alteração de uso e, portanto, não autoriza a transferência do imóvel é:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "o início da ocupação pelo proprietário"
+        },
+        {
+          "letter": "b",
+          "text": "o início de obras de desenvolvimento com o objetivo de venda"
+        },
+        {
+          "letter": "c",
+          "text": "a decisão da diretoria, registrada em ata, de vender um terreno, sem início de obras"
+        },
+        {
+          "letter": "d",
+          "text": "o fim da ocupação pelo proprietário"
+        },
+        {
+          "letter": "e",
+          "text": "o início de arrendamento operacional a terceiros"
+        }
+      ],
+      "answer": "c",
+      "generalRationale": "CPC 28 item 57: a intenção não basta.",
+      "rationales": {
+        "c": "(é a que NÃO evidencia). CPC 28, item 57: “A entidade deve transferir a propriedade para, ou de, propriedade para investimento quando, e apenas quando, houver alteração de uso. (...) Apenas a alteração nas intenções da administração para o uso da propriedade não fornece evidência da alteração no uso.” CPC 28, item 58: “Quando a entidade decidir alienar a propriedade para investimento sem desenvolvimento, ela continua a tratar a propriedade como propriedade para investimento até que seja desreconhecida (eliminada do balanço patrimonial) (...).”",
+        "a": "Evidencia: CPC 28, item 57(a): “início de ocupação pelo proprietário (...), para transferência de propriedade para investimento para propriedade ocupada pelo proprietário”.",
+        "b": "Evidencia: CPC 28, item 57(b): “início de desenvolvimento com objetivo de venda, para transferência de propriedade para investimento para estoque”.",
+        "d": "Evidencia: CPC 28, item 57(c): “fim de ocupação pelo proprietário, para transferência de propriedade ocupada pelo proprietário para propriedade para investimento”.",
+        "e": "Evidencia: CPC 28, item 57(d): “começo de arrendamento operacional para outra entidade, para transferência de estoques para propriedade para investimento”."
+      }
+    },
+    {
+      "id": 18,
+      "stage": 4,
+      "prompt": "Relacione a transferência ao tratamento da diferença (método do valor justo):\n(1) PI → imobilizado ou estoque\n(2) Imobilizado → PI, com valor justo maior que o valor contábil\n(3) Imobilizado → PI, com valor justo menor que o valor contábil\n(4) Estoque → PI\n( ) A diferença entre valor justo e valor contábil vai ao resultado, como numa venda.\n( ) O valor justo na data da mudança passa a ser o custo atribuído.\n( ) A diferença é reconhecida como perda no resultado.\n( ) A diferença vai ao patrimônio líquido, em ajustes de avaliação patrimonial.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "4, 1, 3, 2"
+        },
+        {
+          "letter": "b",
+          "text": "4, 1, 2, 3"
+        },
+        {
+          "letter": "c",
+          "text": "1, 4, 3, 2"
+        },
+        {
+          "letter": "d",
+          "text": "2, 1, 3, 4"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 28 itens 60-64; lista 5-1, Q5. Questão central da plenária.",
+      "rationales": {
+        "a": "(4, 1, 3, 2).\n• Diferença ao resultado, como numa venda = (4) estoque → PI: CPC 28, item 63: “Para uma transferência de estoque para propriedade para investimento que seja escriturada pelo valor justo, qualquer diferença entre o valor justo da propriedade nessa data e o seu valor contábil anterior deve ser reconhecida no resultado.” CPC 28, item 64: o tratamento “é consistente com o tratamento de venda de estoque.”\n• VJ vira custo atribuído = (1) PI → imobilizado/estoque: CPC 28, item 60: “Para a transferência de propriedade para investimento contabilizada pelo valor justo para propriedade ocupada pelo proprietário ou para estoque, o custo considerado da propriedade (...) deve ser o seu valor justo na data da alteração de uso.”\n• Perda no resultado = (3) imobilizado → PI com VJ menor: CPC 28, item 62(a): “qualquer diminuição resultante no valor contábil da propriedade é reconhecida no resultado. Porém, até o ponto em que a quantia esteja incluída em reavaliação anteriormente procedida nessa propriedade, a diminuição é debitada contra esse excedente de reavaliação”.\n• Diferença ao PL (AAP) = (2) imobilizado → PI com VJ maior: CPC 28, item 62(b)(ii): “qualquer parte remanescente do aumento é creditada diretamente no patrimônio líquido, em ajustes de avaliação patrimonial, como parte dos outros resultados abrangentes.”",
+        "b": "Inverte (2) e (3): o aumento vai ao PL (item 62(b)(ii)) e a diminuição ao resultado (item 62(a)).",
+        "c": "Inverte (1) e (4): ver itens 60 e 63.",
+        "d": "Estoque → PI não vai ao PL (item 63), e PI → imobilizado não gera diferença no resultado (item 60)."
+      }
+    },
+    {
+      "id": 19,
+      "stage": 4,
+      "prompt": "Julgue em V ou F:\nI. O imóvel do imobilizado que passa a PI continua sendo depreciado até a data da mudança de uso.\nII. Se a entidade decide vender uma PI sem desenvolvê-la, ela continua classificada como PI até a baixa.\nIII. Na alienação de PI, a diferença entre o valor recebido e o valor contábil vai ao patrimônio líquido.\nIV. Pelo método do custo, as transferências não alteram o valor contábil do imóvel.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, V, F, V"
+        },
+        {
+          "letter": "b",
+          "text": "V, F, F, V"
+        },
+        {
+          "letter": "c",
+          "text": "F, V, V, V"
+        },
+        {
+          "letter": "d",
+          "text": "V, V, V, F"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 28 itens 58, 59, 62, 66. IV = última afirmativa da lista 5-1, Q8.",
+      "rationales": {
+        "a": "(V, V, F, V).\nI – V. CPC 28, item 62: “Até a data em que o imóvel ocupado pelo proprietário se torne propriedade para investimento contabilizada pelo valor justo, a entidade deve depreciar a propriedade (...).”\nII – V. CPC 28, item 58: “Quando a entidade decidir alienar a propriedade para investimento sem desenvolvimento, ela continua a tratar a propriedade como propriedade para investimento até que seja desreconhecida (eliminada do balanço patrimonial) (...).”\nIII – F. CPC 28, item 69: “Ganhos ou perdas provenientes da retirada ou alienação de propriedades para investimento devem ser determinados como a diferença entre os valores líquidos da alienação e o valor contábil do ativo e devem ser reconhecidos no resultado (...).”\nIV – V. CPC 28, item 59: “Quando a entidade usar o método do custo, as transferências entre propriedades para investimento, propriedades ocupadas pelo proprietário e estoque não alteram o valor contábil da propriedade transferida (...).”",
+        "b": "Considera falsa a II (contraria o item 58).",
+        "c": "Considera falsa a I e verdadeira a III.",
+        "d": "Considera verdadeira a III e falsa a IV."
+      }
+    },
+    {
+      "id": 20,
+      "stage": 4,
+      "prompt": "Parte separável de um imóvel de uso próprio deixa de ser ocupada pela entidade e passa a ser alugada a terceiros em arrendamento operacional. De acordo com o CPC 28:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "o imóvel inteiro passa a ser propriedade para investimento"
+        },
+        {
+          "letter": "b",
+          "text": "apenas a parte alugada é transferida para PI, na data da mudança de uso, pelo valor justo, com a diferença tratada como na transferência de imobilizado para PI"
+        },
+        {
+          "letter": "c",
+          "text": "nada muda até que o imóvel seja vendido"
+        },
+        {
+          "letter": "d",
+          "text": "a parte alugada é transferida para estoque"
+        }
+      ],
+      "answer": "b",
+      "generalRationale": "CPC 28 itens 10, 57(c), 61-62.",
+      "rationales": {
+        "a": "CPC 28, item 10: “Se essas partes puderem ser vendidas separadamente (ou arrendadas separadamente sob arrendamento financeiro), a entidade contabiliza as partes separadamente.”",
+        "b": "CPC 28, item 10: “Se essas partes puderem ser vendidas separadamente (ou arrendadas separadamente sob arrendamento financeiro), a entidade contabiliza as partes separadamente.” CPC 28, item 57(c): “fim de ocupação pelo proprietário, para transferência de propriedade ocupada pelo proprietário para propriedade para investimento”. CPC 28, item 62: “Até a data em que o imóvel ocupado pelo proprietário se torne propriedade para investimento contabilizada pelo valor justo, a entidade deve depreciar a propriedade (...).” A diferença segue o item 62 (aumento ao AAP; diminuição ao resultado).",
+        "c": "O fim da ocupação é evidência de mudança de uso: CPC 28, item 57(c): “fim de ocupação pelo proprietário, para transferência de propriedade ocupada pelo proprietário para propriedade para investimento”.",
+        "d": "Estoque é para venda no curso ordinário: CPC 28, item 9(a): não é PI a “propriedade destinada à venda no decurso ordinário das atividades ou em vias de construção ou desenvolvimento para tal venda (ver CPC 16 – Estoques)”. CPC 28, item 57(b): “início de desenvolvimento com objetivo de venda, para transferência de propriedade para investimento para estoque”."
+      }
+    },
+    {
+      "id": 21,
+      "stage": 5,
+      "prompt": "Indique onde cada item aparece nas demonstrações: (R) resultado do período; (PL) patrimônio líquido, em ajustes de avaliação patrimonial; (A) ativo do balanço.\n( ) Ganho de valor justo do ativo biológico no período.\n( ) Excedente do valor justo sobre o valor contábil na transferência de imobilizado para PI.\n( ) Ganho de valor justo da PI após o reconhecimento inicial.\n( ) Produto agrícola colhido e ainda não vendido.\n( ) Diferença na transferência de estoque para PI.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "R, PL, R, A, R"
+        },
+        {
+          "letter": "b",
+          "text": "R, R, PL, A, R"
+        },
+        {
+          "letter": "c",
+          "text": "PL, PL, R, A, R"
+        },
+        {
+          "letter": "d",
+          "text": "R, PL, R, A, PL"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "CPC 29 item 26; CPC 28 itens 35, 62, 63. Ajuda a montar DRE e balanço.",
+      "rationales": {
+        "a": "(R, PL, R, A, R).\n• Ganho de VJ do ativo biológico = R: CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.”\n• Excedente imobilizado → PI = PL: CPC 28, item 62(b)(ii): “qualquer parte remanescente do aumento é creditada diretamente no patrimônio líquido, em ajustes de avaliação patrimonial, como parte dos outros resultados abrangentes.”\n• Ganho de VJ da PI = R: CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.”\n• Produto agrícola colhido não vendido = A (estoque): CPC 29, item 13: “O produto agrícola colhido de ativos biológicos da entidade deve ser mensurado ao valor justo, menos a despesa de venda, no momento da colheita. O valor assim atribuído representa o custo, no momento da aplicação do Pronunciamento Técnico CPC 16 – Estoques (...).”\n• Diferença estoque → PI = R: CPC 28, item 63: “Para uma transferência de estoque para propriedade para investimento que seja escriturada pelo valor justo, qualquer diferença entre o valor justo da propriedade nessa data e o seu valor contábil anterior deve ser reconhecida no resultado.”",
+        "b": "Troca o excedente (PL, item 62) com o ganho de VJ da PI (resultado, item 35).",
+        "c": "O ganho de VJ do ativo biológico vai ao resultado, não ao PL (item 26).",
+        "d": "A diferença estoque → PI vai ao resultado, não ao PL (item 63)."
+      }
+    },
+    {
+      "id": 22,
+      "stage": 5,
+      "prompt": "Assinale a alternativa em que TODOS os itens aumentam o lucro do período sem entrada de caixa:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "ganho de valor justo do ativo biológico; ganho de valor justo da PI; ganho na transferência de estoque para PI"
+        },
+        {
+          "letter": "b",
+          "text": "receita de aluguel recebida à vista; ganho de valor justo do ativo biológico; venda à vista de produto agrícola"
+        },
+        {
+          "letter": "c",
+          "text": "ganho de valor justo da PI; excedente na transferência de imobilizado para PI; aluguel recebido à vista"
+        },
+        {
+          "letter": "d",
+          "text": "venda à vista de ativo biológico; ganho de valor justo da PI; receita de aluguel recebida"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "C engana duas vezes: o excedente vai ao PL e o aluguel recebido é caixa. Centro do quadro lucro × caixa × PL.",
+      "rationales": {
+        "a": "Nenhum dos três envolve recebimento: CPC 29, item 26: “O ganho ou a perda proveniente da mudança no valor justo menos a despesa de venda de ativo biológico reconhecido no momento inicial até o final de cada período deve ser incluído no resultado do exercício em que tiver origem.” CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.” CPC 28, item 63: “Para uma transferência de estoque para propriedade para investimento que seja escriturada pelo valor justo, qualquer diferença entre o valor justo da propriedade nessa data e o seu valor contábil anterior deve ser reconhecida no resultado.”",
+        "b": "Aluguel recebido à vista e venda à vista entram no caixa.",
+        "c": "O excedente imobilizado → PI não passa pelo lucro: CPC 28, item 62(b)(ii): “qualquer parte remanescente do aumento é creditada diretamente no patrimônio líquido, em ajustes de avaliação patrimonial, como parte dos outros resultados abrangentes.” E o aluguel recebido entra no caixa.",
+        "d": "Venda à vista e aluguel recebido entram no caixa."
+      }
+    },
+    {
+      "id": 23,
+      "stage": 5,
+      "prompt": "Julgue em V ou F, sobre a PI mensurada pelo método do valor justo:\nI. O valor justo deve refletir as condições de mercado na data do balanço.\nII. Como o CPC 28 permite escolher o método de mensuração, a entidade pode escolher, a cada ano, o laudo que gerar maior lucro.\nIII. Na hierarquia do valor justo, preços observáveis em mercado ativo têm prioridade sobre estimativas por fluxo de caixa.\nIV. O ganho de valor justo da PI não gera caixa; distribuí-lo como dividendo pode comprometer a liquidez da entidade.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "V, F, V, V"
+        },
+        {
+          "letter": "b",
+          "text": "V, V, V, F"
+        },
+        {
+          "letter": "c",
+          "text": "F, F, V, V"
+        },
+        {
+          "letter": "d",
+          "text": "V, F, F, V"
+        }
+      ],
+      "answer": "a",
+      "generalRationale": "A escolha é do método (uma vez, para todas as PIs), não do laudo. Argumento para recusar o laudo otimista.",
+      "rationales": {
+        "a": "(V, F, V, V).\nI – V. CPC 28, item 40: a entidade deve assegurar que o valor justo reflita “(...) pressupostos que participantes do mercado utilizariam na precificação de propriedade para investimento sob condições correntes de mercado.” Pela definição do CPC 28, item 5, o valor justo é o preço “na data de mensuração”.\nII – F. A escolha é da política (método), aplicada a todas as PIs: CPC 28, item 30: “(...) a entidade deve escolher como sua política contábil o método do valor justo (...) ou o método do custo (...), e deve aplicar essa política a todas as suas propriedades para investimento.” CPC 28, item 31: “É altamente improvável que uma alteração do método do valor justo para o método do custo resulte numa apresentação mais apropriada.” Laudo é estimativa, não política (CPC 23, item 32(c)).\nIII – V. CPC 46, item 72: “A hierarquia de valor justo dá a mais alta prioridade a preços cotados (não ajustados) em mercados ativos para ativos ou passivos idênticos (informações de Nível 1) e a mais baixa prioridade a dados não observáveis (informações de Nível 3).”\nIV – V. CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.” O ganho vai ao resultado sem entrada de caixa; distribuí-lo consome caixa (não há item específico no CPC: é a análise lucro × caixa).",
+        "b": "Considera verdadeira a II e falsa a IV.",
+        "c": "Considera falsa a I (contraria o item 40).",
+        "d": "Considera falsa a III (contraria o CPC 46, item 72)."
+      }
+    },
+    {
+      "id": 24,
+      "stage": 5,
+      "prompt": "Sobre a divulgação de ativos biológicos e de PI, assinale a alternativa INCORRETA.",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "A entidade divulga o ganho ou a perda do período decorrente da mudança no valor justo menos despesa de venda do ativo biológico e do produto agrícola."
+        },
+        {
+          "letter": "b",
+          "text": "A entidade apresenta a conciliação do valor contábil do ativo biológico entre o início e o fim do período."
+        },
+        {
+          "letter": "c",
+          "text": "A distinção entre ativos consumíveis e de produção, e entre maduros e imaturos, é obrigatória."
+        },
+        {
+          "letter": "d",
+          "text": "Mesmo pelo método do custo, a entidade divulga o valor justo das PIs em nota explicativa."
+        }
+      ],
+      "answer": "c",
+      "generalRationale": "Distinção incentivada, não obrigatória. Ajuda no parecer.",
+      "rationales": {
+        "c": "É a INCORRETA (gabarito). CPC 29, item 43: “A entidade é encorajada a fornecer uma descrição da quantidade de cada grupo de ativos biológicos, distinguindo entre consumíveis e de produção ou entre maduros e imaturos, conforme apropriado.” É incentivada, não obrigatória.",
+        "a": "CPC 29, item 40: “A entidade deve divulgar o ganho ou a perda do período corrente em relação ao valor inicial do ativo biológico e do produto agrícola e, também, os decorrentes da mudança no valor justo, menos a despesa de venda dos ativos biológicos.”",
+        "b": "CPC 29, item 50: “A entidade deve apresentar a conciliação das mudanças no valor contábil de ativos biológicos entre o início e o fim do período corrente.” A conciliação inclui, entre outros, “(c) reduções atribuíveis às vendas”.",
+        "d": "CPC 28, item 79: a entidade que aplique o método do custo deve divulgar “(e) o valor justo das propriedades para investimento.”"
+      }
+    },
+    {
+      "id": 25,
+      "stage": 5,
+      "prompt": "A entidade substitui o laudo de avaliação da PI por um laudo atualizado, com novo valor justo. Esse ajuste é:",
+      "alternatives": [
+        {
+          "letter": "a",
+          "text": "mudança de política contábil, aplicada retrospectivamente"
+        },
+        {
+          "letter": "b",
+          "text": "retificação de erro, com reapresentação dos períodos anteriores"
+        },
+        {
+          "letter": "c",
+          "text": "mudança de estimativa contábil, reconhecida prospectivamente no resultado do período"
+        },
+        {
+          "letter": "d",
+          "text": "ajuste direto em lucros acumulados, sem passar pelo resultado"
+        }
+      ],
+      "answer": "c",
+      "generalRationale": "Retoma a Unidade 1 (CPC 23): trocar o laudo não muda a política contábil.",
+      "rationales": {
+        "a": "CPC 23, item 35: “A mudança na base de avaliação é uma mudança na política contábil e não uma mudança na estimativa contábil.” Trocar o laudo não muda a base de avaliação (continua sendo o valor justo).",
+        "b": "CPC 23, item 34: “(...) Por sua natureza, uma mudança em uma estimativa contábil não se relaciona com períodos anteriores e não é a correção de um erro.”",
+        "c": "CPC 23, item 32: exemplos de estimativas contábeis incluem “(c) valor justo de um ativo ou passivo, aplicando o CPC 46”. CPC 23, item 36: o efeito de mudança na estimativa contábil “deve ser reconhecido prospectivamente, incluindo-o nos resultados do: (a) período da mudança (...)”. CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.”",
+        "d": "O efeito vai ao resultado: CPC 23, item 36: o efeito de mudança na estimativa contábil “deve ser reconhecido prospectivamente, incluindo-o nos resultados do: (a) período da mudança (...)”. CPC 28, item 35: “O ganho ou a perda proveniente de alteração no valor justo de propriedade para investimento deve ser reconhecido no resultado do período em que ocorra.”"
+      }
+    }
+  ],
+  "balances": {
+    "2": {
+      "sourceSheet": "Gabarito E2",
+      "companies": {
+        "1": {
+          "companyNameInSheet": "Estância Boi Bonito",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 1395000,
+              "Efeito no resultado": -40000,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 1395000,
+            "result": -40000
+          }
+        },
+        "2": {
+          "companyNameInSheet": "Laticínios Vaca Mimosa",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 1670000,
+              "Efeito no resultado": 28000,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 1670000,
+            "result": 28000
+          }
+        },
+        "3": {
+          "companyNameInSheet": "Pé de Eucalipto",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 1097000,
+              "Efeito no resultado": -3000,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 1097000,
+            "result": -3000
+          }
+        },
+        "4": {
+          "companyNameInSheet": "Pomar Serra Gelada",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 1330000,
+              "Efeito no resultado": 0,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 1330000,
+            "result": 0
+          }
+        },
+        "5": {
+          "companyNameInSheet": "Grãos do Oeste",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 780000,
+              "Efeito no resultado": 0,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 780000,
+            "result": 0
+          }
+        },
+        "6": {
+          "companyNameInSheet": "Ostras da Ilha",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 1490000,
+              "Efeito no resultado": 0,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 1490000,
+            "result": 0
+          }
+        },
+        "7": {
+          "companyNameInSheet": "Vinícola Cachos de Videira",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 1748000,
+              "Efeito no resultado": 0,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 1748000,
+            "result": 0
+          }
+        },
+        "8": {
+          "companyNameInSheet": "Usina Doce Vale",
+          "summaryRows": [
+            {
+              "Evento": "Saldo da etapa",
+              "Débito": "Caixa final",
+              "Valor (R$)": 550000,
+              "Efeito no resultado": 0,
+              "Norma e item": "Resultado acumulado"
+            }
+          ],
+          "checkpoint": {
+            "cash": 550000,
+            "result": 0
+          }
+        }
+      }
+    },
+    "3": {
+      "sourceSheet": "Gabarito E3",
+      "companies": {
+        "1": {
+          "companyNameInSheet": "Estância Boi Bonito",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 132000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 92000,
+              "Efeito no caixa": 1671000
+            }
+          ],
+          "checkpoint": {
+            "result": 92000,
+            "cash": 1671000
+          }
+        },
+        "2": {
+          "companyNameInSheet": "Laticínios Vaca Mimosa",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 101500
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 129500,
+              "Efeito no caixa": 1740000
+            }
+          ],
+          "checkpoint": {
+            "result": 129500,
+            "cash": 1740000
+          }
+        },
+        "3": {
+          "companyNameInSheet": "Pé de Eucalipto",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 105000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 102000,
+              "Efeito no caixa": 1257000
+            }
+          ],
+          "checkpoint": {
+            "result": 102000,
+            "cash": 1257000
+          }
+        },
+        "4": {
+          "companyNameInSheet": "Pomar Serra Gelada",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 200000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 200000,
+              "Efeito no caixa": 1498000
+            }
+          ],
+          "checkpoint": {
+            "result": 200000,
+            "cash": 1498000
+          }
+        },
+        "5": {
+          "companyNameInSheet": "Grãos do Oeste",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 194000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 194000,
+              "Efeito no caixa": 1160000
+            }
+          ],
+          "checkpoint": {
+            "result": 194000,
+            "cash": 1160000
+          }
+        },
+        "6": {
+          "companyNameInSheet": "Ostras da Ilha",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 44000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 44000,
+              "Efeito no caixa": 1525000
+            }
+          ],
+          "checkpoint": {
+            "result": 44000,
+            "cash": 1525000
+          }
+        },
+        "7": {
+          "companyNameInSheet": "Vinícola Cachos de Videira",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 203500
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 203500,
+              "Efeito no caixa": 1618000
+            }
+          ],
+          "checkpoint": {
+            "result": 203500,
+            "cash": 1618000
+          }
+        },
+        "8": {
+          "companyNameInSheet": "Usina Doce Vale",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 3",
+              "Efeito no resultado": 740000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 740000,
+              "Efeito no caixa": 1340000
+            }
+          ],
+          "checkpoint": {
+            "result": 740000,
+            "cash": 1340000
+          }
+        }
+      }
+    },
+    "4": {
+      "sourceSheet": "Gabarito E4",
+      "companies": {
+        "1": {
+          "companyNameInSheet": "Estância Boi Bonito",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": -16800
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 75200,
+              "Efeito no caixa": 1671000
+            }
+          ],
+          "checkpoint": {
+            "result": 75200,
+            "cash": 1671000
+          }
+        },
+        "2": {
+          "companyNameInSheet": "Laticínios Vaca Mimosa",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": -26000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 103500,
+              "Efeito no caixa": 1740000
+            }
+          ],
+          "checkpoint": {
+            "result": 103500,
+            "cash": 1740000
+          }
+        },
+        "3": {
+          "companyNameInSheet": "Pé de Eucalipto",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": -15000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 87000,
+              "Efeito no caixa": 1257000
+            }
+          ],
+          "checkpoint": {
+            "result": 87000,
+            "cash": 1257000
+          }
+        },
+        "4": {
+          "companyNameInSheet": "Pomar Serra Gelada",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": -8000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 192000,
+              "Efeito no caixa": 1478000
+            }
+          ],
+          "checkpoint": {
+            "result": 192000,
+            "cash": 1478000
+          }
+        },
+        "5": {
+          "companyNameInSheet": "Grãos do Oeste",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": -30000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 164000,
+              "Efeito no caixa": 1080000
+            }
+          ],
+          "checkpoint": {
+            "result": 164000,
+            "cash": 1080000
+          }
+        },
+        "6": {
+          "companyNameInSheet": "Ostras da Ilha",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": -20000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 24000,
+              "Efeito no caixa": 1525000
+            }
+          ],
+          "checkpoint": {
+            "result": 24000,
+            "cash": 1525000
+          }
+        },
+        "7": {
+          "companyNameInSheet": "Vinícola Cachos de Videira",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": 15000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 218500,
+              "Efeito no caixa": 1588000
+            }
+          ],
+          "checkpoint": {
+            "result": 218500,
+            "cash": 1588000
+          }
+        },
+        "8": {
+          "companyNameInSheet": "Usina Doce Vale",
+          "summaryRows": [
+            {
+              "Evento": "Saldo",
+              "Débito": "Resultado da etapa 4",
+              "Efeito no resultado": 40000
+            },
+            {
+              "Débito": "Caixa final · Resultado acumulado",
+              "Efeito no resultado": 780000,
+              "Efeito no caixa": 1280000
+            }
+          ],
+          "checkpoint": {
+            "result": 780000,
+            "cash": 1280000
+          }
+        }
+      }
+    }
+  },
+  "stageOneItems": {
+    "1": [
+      {
+        "item": "1.1",
+        "asset": "Bois em engorda",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 1 e 5"
+      },
+      {
+        "item": "1.2",
+        "asset": "Trovão",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6 (animal de trabalho não é atividade agrícola)"
+      },
+      {
+        "item": "1.3",
+        "asset": "Carcaças na câmara fria",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5 (carcaça)"
+      },
+      {
+        "item": "1.4",
+        "asset": "Picanha do churrasco",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 16, item 6"
+      },
+      {
+        "item": "1.5",
+        "asset": "Terras da fazenda",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6; CPC 29, item 2 (terra não é AB)"
+      },
+      {
+        "item": "1.6",
+        "asset": "Pasto do vizinho",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, itens 5 e 8"
+      }
+    ],
+    "2": [
+      {
+        "item": "2.1",
+        "asset": "Vacas em lactação",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "ANC – Ativo biológico",
+        "standard": "CPC 29, item 5"
+      },
+      {
+        "item": "2.2",
+        "asset": "Novilhas",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "ANC – Ativo biológico",
+        "standard": "CPC 29, item 5"
+      },
+      {
+        "item": "2.3",
+        "asset": "Leite no tanque",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "2.4",
+        "asset": "Queijo colonial",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 3 (processado após a colheita); CPC 16"
+      },
+      {
+        "item": "2.5",
+        "asset": "Ordenhadeira",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "2.6",
+        "asset": "Rex",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6 (animal de trabalho)"
+      },
+      {
+        "item": "2.7",
+        "asset": "Sala comercial",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, itens 5 e 8"
+      }
+    ],
+    "3": [
+      {
+        "item": "3.1",
+        "asset": "Talhões de eucalipto",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "ANC – Ativo biológico",
+        "standard": "CPC 29, item 5"
+      },
+      {
+        "item": "3.2",
+        "asset": "Fileira de eucaliptos",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6 (quebra-vento, não será cortado)"
+      },
+      {
+        "item": "3.3",
+        "asset": "Toras do talhão 7",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "3.4",
+        "asset": "Toras compradas",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 16, item 6 (não é produto agrícola da entidade)"
+      },
+      {
+        "item": "3.5",
+        "asset": "Terra da floresta",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6; CPC 29, item 2"
+      },
+      {
+        "item": "3.6",
+        "asset": "Terreno na BR",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, item 8"
+      }
+    ],
+    "4": [
+      {
+        "item": "4.1",
+        "asset": "Macieiras",
+        "classification": "Planta portadora – Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 29, itens 5 e 5A; CPC 27"
+      },
+      {
+        "item": "4.2",
+        "asset": "Maçãs no pé",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 5C"
+      },
+      {
+        "item": "4.3",
+        "asset": "Maçãs na câmara fria",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "4.4",
+        "asset": "Suco de maçã",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 3; CPC 16"
+      },
+      {
+        "item": "4.5",
+        "asset": "Câmara fria",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "4.6",
+        "asset": "Terra de expansão",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, item 8"
+      }
+    ],
+    "5": [
+      {
+        "item": "5.1",
+        "asset": "Soja em crescimento",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 5A (cultura anual não é planta portadora)"
+      },
+      {
+        "item": "5.2",
+        "asset": "Milho no silo",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "5.3",
+        "asset": "Soja do vizinho",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 16, item 6 (não é produto agrícola da entidade)"
+      },
+      {
+        "item": "5.4",
+        "asset": "Colheitadeira",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "5.5",
+        "asset": "Armazém",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "5.6",
+        "asset": "Terras da fazenda",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6; CPC 29, item 2"
+      },
+      {
+        "item": "5.7",
+        "asset": "Terreno na BR",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, item 8"
+      }
+    ],
+    "6": [
+      {
+        "item": "6.1",
+        "asset": "Ostras nas lanternas",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 5"
+      },
+      {
+        "item": "6.2",
+        "asset": "Ostras colhidas",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "6.3",
+        "asset": "Peixes pescados",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 6 (pesca sem manejo não é atividade agrícola)"
+      },
+      {
+        "item": "6.4",
+        "asset": "Lanternas, balsas e barco",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "6.5",
+        "asset": "Rancho à beira-mar",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "6.6",
+        "asset": "Apartamento",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, itens 5 e 8"
+      }
+    ],
+    "7": [
+      {
+        "item": "7.1",
+        "asset": "Videiras",
+        "classification": "Planta portadora – Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 29, itens 5 e 5A; CPC 27"
+      },
+      {
+        "item": "7.2",
+        "asset": "Uvas nos cachos",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 5C"
+      },
+      {
+        "item": "7.3",
+        "asset": "Uvas colhidas",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "7.4",
+        "asset": "Vinho nos tanques",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 3; CPC 16"
+      },
+      {
+        "item": "7.5",
+        "asset": "Barris de carvalho",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "7.6",
+        "asset": "Pousada e restaurante",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 28, item 12 (serviços significativos)"
+      },
+      {
+        "item": "7.7",
+        "asset": "Terreno em loteamento",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 28, item 9 (a) (imóvel em desenvolvimento para venda)"
+      },
+      {
+        "item": "7.8",
+        "asset": "Terreno no centro",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, item 8"
+      }
+    ],
+    "8": [
+      {
+        "item": "8.1",
+        "asset": "Soqueiras do canavial",
+        "classification": "Planta portadora – Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 29, itens 5 e 5A; CPC 27"
+      },
+      {
+        "item": "8.2",
+        "asset": "Cana em pé",
+        "classification": "Ativo biológico (CPC 29)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 5C"
+      },
+      {
+        "item": "8.3",
+        "asset": "Cana cortada",
+        "classification": "Produto agrícola → Estoque (CPC 29 e 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, itens 4 e 5"
+      },
+      {
+        "item": "8.4",
+        "asset": "Açúcar e etanol",
+        "classification": "Estoque (CPC 16)",
+        "balanceGroup": "Ativo circulante",
+        "standard": "CPC 29, item 3; CPC 16"
+      },
+      {
+        "item": "8.5",
+        "asset": "Colhedora de cana",
+        "classification": "Imobilizado (CPC 27)",
+        "balanceGroup": "ANC – Imobilizado",
+        "standard": "CPC 27, item 6"
+      },
+      {
+        "item": "8.6",
+        "asset": "Galpão alugado",
+        "classification": "Propriedade para investimento (CPC 28)",
+        "balanceGroup": "ANC – Investimentos",
+        "standard": "CPC 28, item 10 (parte própria insignificante)"
+      }
+    ]
+  },
+  "stageFive": {
+    "sourceSheet": "Gabarito E5",
+    "dreRows": [
+      {
+        "label": "Receita de vendas",
+        "values": {
+          "1": 350000,
+          "2": 90000,
+          "3": 180000,
+          "4": 220000,
+          "5": 500000,
+          "6": 38000,
+          "7": 0,
+          "8": 1000000
+        }
+      },
+      {
+        "label": "(−) Custo da venda",
+        "values": {
+          "1": -336000,
+          "2": -90000,
+          "3": -170000,
+          "4": -208000,
+          "5": -480000,
+          "6": -35000,
+          "7": 0,
+          "8": -850000
+        }
+      },
+      {
+        "label": "(−) Despesa de venda",
+        "values": {
+          "1": -14000,
+          "2": 0,
+          "3": -10000,
+          "4": -12000,
+          "5": -20000,
+          "6": -3000,
+          "7": 0,
+          "8": 0
+        }
+      },
+      {
+        "label": "Ganho/perda na avaliação de ativo biológico e produto agrícola",
+        "values": {
+          "1": 75200,
+          "2": 110000,
+          "3": 30000,
+          "4": 212000,
+          "5": 210000,
+          "6": -5000,
+          "7": 265000,
+          "8": 620000
+        }
+      },
+      {
+        "label": "Ganho/perda no valor justo da PI",
+        "values": {
+          "1": 0,
+          "2": 0,
+          "3": 60000,
+          "4": 40000,
+          "5": 0,
+          "6": 20000,
+          "7": 0,
+          "8": 50000
+        }
+      },
+      {
+        "label": "Receita de aluguel",
+        "values": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 15000,
+          "7": 0,
+          "8": 60000
+        }
+      },
+      {
+        "label": "(−) Depreciação",
+        "values": {
+          "1": 0,
+          "2": -6500,
+          "3": 0,
+          "4": -60000,
+          "5": -46000,
+          "6": -6000,
+          "7": -46500,
+          "8": -100000
+        }
+      },
+      {
+        "label": "(−) Despesas gerais",
+        "values": {
+          "1": 0,
+          "2": 0,
+          "3": -3000,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        }
+      },
+      {
+        "label": "(=) Resultado do ano (antes do laudo)",
+        "values": {
+          "1": 75200,
+          "2": 103500,
+          "3": 87000,
+          "4": 192000,
+          "5": 164000,
+          "6": 24000,
+          "7": 218500,
+          "8": 780000
+        }
+      },
+      {
+        "label": "Variação do caixa no ano",
+        "values": {
+          "1": -329000,
+          "2": -260000,
+          "3": -743000,
+          "4": -522000,
+          "5": -920000,
+          "6": -475000,
+          "7": -412000,
+          "8": -720000
+        }
+      },
+      {
+        "label": "Diferença resultado − caixa",
+        "values": {
+          "1": 404200,
+          "2": 363500,
+          "3": 830000,
+          "4": 714000,
+          "5": 1084000,
+          "6": 499000,
+          "7": 630500,
+          "8": 1500000
+        }
+      }
+    ],
+    "checkpoint": {
+      "1": {
+        "laudoA": 120000,
+        "laudoB": 20000,
+        "cashEffect": 0
+      },
+      "2": {
+        "laudoA": 60000,
+        "laudoB": -10000,
+        "cashEffect": 0
+      },
+      "3": {
+        "laudoA": 200000,
+        "laudoB": 40000,
+        "cashEffect": 0
+      },
+      "4": {
+        "laudoA": 140000,
+        "laudoB": 20000,
+        "cashEffect": 0
+      },
+      "5": {
+        "laudoA": 60000,
+        "laudoB": -10000,
+        "cashEffect": 0
+      },
+      "6": {
+        "laudoA": 70000,
+        "laudoB": 10000,
+        "cashEffect": 0
+      },
+      "7": {
+        "laudoA": 120000,
+        "laudoB": 10000,
+        "cashEffect": 0
+      },
+      "8": {
+        "laudoA": 300000,
+        "laudoB": 20000,
+        "cashEffect": 0
+      }
+    }
+  },
+  "reportBlocks": {
+    "1": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Os bois em engorda e o cavalo Trovão são ativos biológicos, pois são animais vivos controlados pela fazenda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O cavalo é mantido para uso na lida, não para transformação biológica: é imobilizado (CPC 27; U4 slide 12)."
+          },
+          {
+            "id": "b",
+            "text": "Os bois em engorda são ativo biológico (CPC 29); o cavalo Trovão, usado na lida, é imobilizado (CPC 27); e o pasto arrendado ao vizinho é propriedade para investimento (CPC 28).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 5; CPC 27 item 6; CPC 28 item 8(c)."
+          },
+          {
+            "id": "c",
+            "text": "O pasto arrendado ao vizinho é imobilizado, pois é terra da fazenda ligada à atividade agrícola.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Terra arrendada a terceiros em arrendamento operacional é PI (CPC 28 item 8(c))."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Reconhecimento inicial (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Os bois comprados foram reconhecidos pelo valor pago, R$ 520.000, porque o custo de aquisição é a base do reconhecimento.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O ativo biológico é mensurado a VJ − DV no reconhecimento inicial (CPC 29 item 12)."
+          },
+          {
+            "id": "b",
+            "text": "A diferença de R$ 40.000 entre o valor pago e o VJ − DV foi registrada no patrimônio líquido, em ajuste de avaliação patrimonial.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Ganho ou perda no reconhecimento inicial vai ao resultado (CPC 29 itens 26 e 27)."
+          },
+          {
+            "id": "c",
+            "text": "Os bois comprados por R$ 520.000 foram reconhecidos a VJ − DV de R$ 480.000; a diferença de R$ 40.000 foi perda no resultado (CPC 29, itens 12 e 27).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 12, 26 e 27; U4 slides 27-28."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A morte de 5 bois reduziu o ativo biológico e gerou perda de R$ 16.800 no resultado (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 26."
+          },
+          {
+            "id": "b",
+            "text": "A morte dos 5 bois não afeta o resultado, pois não houve saída de caixa.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A perda de valor do ativo biológico vai ao resultado, mesmo sem saída de caixa (item 26)."
+          },
+          {
+            "id": "c",
+            "text": "A perda dos 5 bois só deve ser registrada quando o restante do rebanho for vendido.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O ativo biológico é remensurado a cada fechamento; a perda é do período em que ocorre (itens 12 e 26)."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 520.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 620.000), com a ressalva de que o ganho adicional de R$ 100.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "2": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O queijo colonial é produto agrícola, pois é feito com o leite da própria fazenda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O processamento após a colheita fica fora do CPC 29: o queijo é estoque (CPC 29 item 3)."
+          },
+          {
+            "id": "b",
+            "text": "O leite no tanque continua sendo ativo biológico até ser vendido.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Na ordenha o leite é colhido: vira produto agrícola e vai para estoque (CPC 29 itens 5 e 13)."
+          },
+          {
+            "id": "c",
+            "text": "As vacas e novilhas são ativo biológico; o leite, ao ser ordenhado, é produto agrícola e vai para estoque; o queijo produzido é estoque (CPC 16), fora do CPC 29.",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 3, 5 e 13."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Produto agrícola (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O leite foi mensurado a VJ − DV na ordenha (R$ 90.000); esse valor virou o custo do estoque, e a venda por R$ 90.000 não gerou lucro adicional (CPC 29, item 13).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 13; U4 slide 46."
+          },
+          {
+            "id": "b",
+            "text": "O leite foi registrado pelo gasto de extração (R$ 20.000), e o lucro de R$ 70.000 só apareceu na venda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O produto agrícola é mensurado a VJ − DV na colheita; o ganho é reconhecido na ordenha (item 13; slide 46)."
+          },
+          {
+            "id": "c",
+            "text": "O leite em estoque continua sendo remensurado a valor justo até a venda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Depois da colheita aplica-se o CPC 16; o VJ − DV da colheita passa a ser o custo (item 13)."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Como as vacas são de produção, a queda de valor causada pela mastite é registrada como depreciação.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Ativo biológico a VJ − DV não é depreciado; a queda é perda de VJ no resultado (item 26)."
+          },
+          {
+            "id": "b",
+            "text": "A mastite reduziu o VJ − DV do rebanho de R$ 266.000 para R$ 240.000; a perda de R$ 26.000 foi reconhecida no resultado (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 26."
+          },
+          {
+            "id": "c",
+            "text": "A perda só será reconhecida quando as vacas forem vendidas ou descartadas.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A remensuração ocorre a cada fechamento (itens 12 e 26)."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 290.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 360.000), com a ressalva de que o ganho adicional de R$ 70.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "3": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Os eucaliptos dos talhões são plantas portadoras, pois são cultivados por vários anos.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Árvores cultivadas para madeira não são plantas portadoras (CPC 29 item 5A(a))."
+          },
+          {
+            "id": "b",
+            "text": "Os talhões para corte são ativo biológico; a fileira de quebra-vento é imobilizado; as toras compradas de outra fazenda são estoque; e o terreno na BR é PI.",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 5; U4 slide 21; CPC 28 item 8(a)."
+          },
+          {
+            "id": "c",
+            "text": "As toras compradas de outra fazenda são produto agrícola, pois são da mesma espécie dos talhões.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Produto agrícola é só o colhido de ativo biológico da própria entidade (CPC 29 item 5; U4 slide 16)."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Reconhecimento da PI (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O terreno na BR foi reconhecido por R$ 840.000 (preço, ITBI, escritura e comissão); o churrasco de R$ 3.000 foi despesa (CPC 28, itens 20, 21 e 23).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 28 itens 20, 21 e 23; U5 slide 11."
+          },
+          {
+            "id": "b",
+            "text": "O terreno na BR foi reconhecido por R$ 843.000, incluindo o churrasco, pois foi um gasto ligado à compra.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Gastos de comemoração não são diretamente atribuíveis; não entram no custo (item 23)."
+          },
+          {
+            "id": "c",
+            "text": "O terreno na BR foi reconhecido por R$ 800.000; ITBI, escritura e comissão foram despesas.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Custos de transação entram na mensuração inicial (CPC 28 itens 20 e 21)."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O ataque das formigas é registrado como despesa de manutenção, sem mexer no ativo biológico.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A queda do VJ − DV reduz o ativo biológico e vai ao resultado (item 26)."
+          },
+          {
+            "id": "b",
+            "text": "A perda causada pelas formigas só é registrada quando o talhão for cortado.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O ativo biológico é remensurado a cada fechamento (itens 12 e 26)."
+          },
+          {
+            "id": "c",
+            "text": "O ataque das formigas reduziu o VJ − DV do talhão novo de R$ 75.000 para R$ 60.000; a perda de R$ 15.000 foi reconhecida no resultado (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 26."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 940.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 1.100.000), com a ressalva de que o ganho adicional de R$ 160.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "4": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "As macieiras são plantas portadoras (imobilizado, CPC 27); as maçãs no pé são ativo biológico; as maçãs colhidas vão para estoque; e o suco é estoque (CPC 16).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 5 e 5C; CPC 27; U4 slide 53."
+          },
+          {
+            "id": "b",
+            "text": "As macieiras são ativo biológico mensurado a valor justo, pois são plantas vivas.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Plantas portadoras ficam fora do CPC 29 e vão ao imobilizado pelo custo (CPC 29 itens 1(a) e 2(b))."
+          },
+          {
+            "id": "c",
+            "text": "As maçãs no pé fazem parte da planta portadora e ficam no imobilizado.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O produto em desenvolvimento na planta portadora é ativo biológico (CPC 29 item 5C)."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Colheita e depreciação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "As macieiras foram remensuradas a valor justo, junto com as maçãs.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A planta portadora fica ao custo menos depreciação (CPC 27 item 30)."
+          },
+          {
+            "id": "b",
+            "text": "As maçãs foram remensuradas a VJ − DV de R$ 260.000 na colheita; esse valor virou o custo do estoque, e as macieiras foram depreciadas em R$ 60.000 (CPC 29, item 13; CPC 27).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 13; CPC 27 itens 30 e 50."
+          },
+          {
+            "id": "c",
+            "text": "As maçãs colhidas continuam a valor justo no estoque até a venda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Depois da colheita aplica-se o CPC 16 (CPC 29 item 13)."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O granizo deve ser registrado como redução das macieiras (imobilizado).",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O granizo atingiu os frutos, que são ativo biológico (item 5C); a perda é de VJ − DV (item 26)."
+          },
+          {
+            "id": "b",
+            "text": "Como os frutos ainda não foram colhidos, a perda causada pelo granizo não é registrada.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Os frutos em formação são remensurados no fechamento (itens 12 e 26)."
+          },
+          {
+            "id": "c",
+            "text": "Os frutos da nova safra entraram pelos tratos de R$ 20.000 e, com o granizo, o VJ − DV caiu para R$ 12.000; a perda de R$ 8.000 foi ao resultado (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 12 e 26; U4 slide 33."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 580.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 700.000), com a ressalva de que o ganho adicional de R$ 120.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "5": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A lavoura de soja é planta portadora, pois a fazenda planta soja todos os anos.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Culturas anuais não são plantas portadoras (CPC 29 item 5A(c))."
+          },
+          {
+            "id": "b",
+            "text": "A soja comprada do vizinho é produto agrícola, pois será vendida junto com a soja colhida.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Só é produto agrícola o que foi colhido de ativo biológico da entidade; a soja comprada é estoque (U4 slide 16)."
+          },
+          {
+            "id": "c",
+            "text": "A soja em crescimento é ativo biológico (cultura anual, não é planta portadora); o milho colhido é produto agrícola em estoque; a soja comprada do vizinho é estoque; e o terreno na BR é PI.",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 5 e 5A; CPC 28 item 8(b)."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Colheita e venda (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A soja foi remensurada a VJ − DV de R$ 640.000 na colheita, com ganho de R$ 240.000; na venda de 75%, o resultado foi zero, pois o custo já estava a VJ − DV (CPC 29, itens 13 e 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 13 e 26."
+          },
+          {
+            "id": "b",
+            "text": "O ganho da soja só aparece na venda, como receita menos o custo de produção.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O ganho é reconhecido na remensuração até a colheita (itens 13 e 26)."
+          },
+          {
+            "id": "c",
+            "text": "A soja colhida continua sendo remensurada a valor justo no estoque.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Depois da colheita aplica-se o CPC 16 (item 13)."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A estiagem reduziu o VJ − DV do milho safrinha para R$ 50.000, abaixo dos R$ 80.000 gastos; a perda de R$ 30.000 foi ao resultado (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 12 e 26."
+          },
+          {
+            "id": "b",
+            "text": "A perda causada pela estiagem só é reconhecida quando o milho for colhido.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A remensuração ocorre a cada fechamento (itens 12 e 26)."
+          },
+          {
+            "id": "c",
+            "text": "O milho safrinha fica pelo custo de R$ 80.000 até a colheita, sem registro de perda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O ativo biológico é mensurado a VJ − DV, não pelo custo (item 12)."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 190.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 260.000), com a ressalva de que o ganho adicional de R$ 70.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "6": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Os peixes pescados em alto-mar são ativo biológico, pois são animais e a empresa é do agro.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Pesca sem manejo não é atividade agrícola; os peixes são estoque (U4 slides 10-11)."
+          },
+          {
+            "id": "b",
+            "text": "As ostras em cultivo são ativo biológico; as ostras colhidas vão para estoque; os peixes pescados em alto-mar são estoque, pois não há atividade agrícola; e o apartamento alugado é PI.",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 5 e 6; U4 slides 10-11; CPC 28 item 8(c)."
+          },
+          {
+            "id": "c",
+            "text": "O apartamento alugado é imobilizado, pois a empresa também usa imóveis na operação.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Imóvel mantido para aluguel é PI (CPC 28 itens 5 e 8(c))."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Exceção do custo (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "As sementes foram reconhecidas a valor justo desde a compra, com base em estimativa da própria empresa.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Sem mercado e com estimativas claramente não confiáveis, usa-se o custo no reconhecimento inicial (CPC 29 item 30)."
+          },
+          {
+            "id": "b",
+            "text": "Como as ostras começaram ao custo, ficam ao custo até a venda.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Quando o VJ passa a ser confiável, a entidade passa a mensurar a VJ − DV (item 30) e não volta ao custo (item 31)."
+          },
+          {
+            "id": "c",
+            "text": "As sementes foram reconhecidas ao custo (R$ 40.000), porque não havia valor justo confiável; quando surgiu mercado, passaram a VJ − DV, sem volta ao custo (CPC 29, itens 30 e 31).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 30 e 31; U4 slides 36-37."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A maré vermelha reduziu o VJ − DV das ostras de R$ 35.000 para R$ 15.000; a perda de R$ 20.000 foi reconhecida no resultado (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 item 26."
+          },
+          {
+            "id": "b",
+            "text": "A interdição pela maré vermelha é um evento externo e não afeta a contabilidade.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A queda do VJ − DV do ativo biológico vai ao resultado (item 26)."
+          },
+          {
+            "id": "c",
+            "text": "A perda da maré vermelha foi lançada contra o patrimônio líquido, por ser um evento extraordinário.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Ganhos e perdas de VJ do ativo biológico vão ao resultado (item 26)."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 440.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 500.000), com a ressalva de que o ganho adicional de R$ 60.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "7": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A pousada é propriedade para investimento, pois gera receita de hospedagem.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Com serviços significativos aos hóspedes, a pousada é imobilizado (CPC 28 item 12)."
+          },
+          {
+            "id": "b",
+            "text": "O vinho é produto agrícola, pois a vinícola cultivou e colheu a uva.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O processamento da uva em vinho fica fora do CPC 29: o vinho é estoque (CPC 29 item 3)."
+          },
+          {
+            "id": "c",
+            "text": "As videiras são plantas portadoras (imobilizado); as uvas nos cachos são ativo biológico; o vinho é estoque (CPC 16); e a pousada, com serviços significativos aos hóspedes, é imobilizado (CPC 28, item 12).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 3 e 5C; CPC 28 item 12."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Colheita e vinificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Na vindima, as uvas foram mensuradas a VJ − DV (R$ 300.000), que passou a ser o custo da uva no vinho; os gastos de vinificação foram somados ao estoque, sem ganho de valor justo no vinho (CPC 29, itens 3 e 13).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 3 e 13."
+          },
+          {
+            "id": "b",
+            "text": "O vinho nos tanques é remensurado a valor justo no fechamento.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O vinho é estoque (CPC 16), mensurado pelo custo (CPC 29 item 3)."
+          },
+          {
+            "id": "c",
+            "text": "As uvas entram no vinho pelo custo dos tratos (R$ 50.000).",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Na colheita, a uva é mensurada a VJ − DV, que passa a ser o custo (item 13)."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O ganho de R$ 15.000 nos cachos da nova safra só pode ser reconhecido quando o vinho for vendido.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O ganho de VJ do ativo biológico é do período em que ocorre (item 26)."
+          },
+          {
+            "id": "b",
+            "text": "Os cachos da nova safra entraram pelos tratos de R$ 30.000 e foram remensurados a VJ − DV de R$ 45.000; o ganho de R$ 15.000 foi ao resultado, sem entrada de caixa (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 12 e 26."
+          },
+          {
+            "id": "c",
+            "text": "O ganho de R$ 15.000 dos cachos fica no patrimônio líquido até a colheita.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Ganhos de VJ do ativo biológico vão ao resultado (item 26)."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 410.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 520.000), com a ressalva de que o ganho adicional de R$ 110.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ],
+    "8": [
+      {
+        "id": 1,
+        "theme": "Classificação (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "As soqueiras são plantas portadoras (imobilizado); a cana em pé é ativo biológico; a cana cortada é produto agrícola; o açúcar e o etanol são estoque; e o galpão, quase todo alugado e com parte própria insignificante, é PI (CPC 28, item 10).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 5 e 5C; U4 slide 53; CPC 28 item 10."
+          },
+          {
+            "id": "b",
+            "text": "O galpão é imobilizado, pois a usina usa uma salinha para a administração.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Partes não separáveis com uso próprio insignificante: o imóvel todo é PI (CPC 28 item 10)."
+          },
+          {
+            "id": "c",
+            "text": "A cana em pé faz parte das soqueiras e fica no imobilizado.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O produto em desenvolvimento na planta portadora é ativo biológico (CPC 29 item 5C)."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "theme": "Propriedade para investimento (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "O galpão foi reconhecido pelo valor justo desde a compra, pois a usina adota o método do valor justo.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "O reconhecimento inicial da PI é sempre pelo custo (CPC 28 item 20)."
+          },
+          {
+            "id": "b",
+            "text": "O ganho de R$ 50.000 do galpão foi para o patrimônio líquido, em ajuste de avaliação patrimonial.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "No método do VJ, o ganho vai ao resultado (CPC 28 item 35)."
+          },
+          {
+            "id": "c",
+            "text": "O galpão foi reconhecido por R$ 1.050.000, com ITBI, escritura e comissão; depois, a usina mede a PI a valor justo, com ganho de R$ 50.000 no resultado (CPC 28, itens 20, 21 e 35).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 28 itens 20, 21 e 35."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "theme": "Imprevisto (técnico)",
+        "options": [
+          {
+            "id": "a",
+            "text": "A cana da nova safra fica ao custo dos tratos (R$ 60.000) até o corte.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "A cana em pé é ativo biológico a VJ − DV (CPC 29 item 12)."
+          },
+          {
+            "id": "b",
+            "text": "O ganho de R$ 40.000 na rebrota entrou no caixa da usina.",
+            "correctness": "errada",
+            "correct": false,
+            "rationale": "Ganho de remensuração não é recebimento: não há entrada de caixa."
+          },
+          {
+            "id": "c",
+            "text": "A rebrota entrou pelos tratos de R$ 60.000 e foi remensurada a VJ − DV de R$ 100.000; o ganho de R$ 40.000 foi ao resultado, sem entrada de caixa (CPC 29, item 26).",
+            "correctness": "CORRETA",
+            "correct": true,
+            "rationale": "CPC 29 itens 12 e 26."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "theme": "Laudo (julgamento)",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recomendamos o laudo B (R$ 1.120.000), feito por avaliador independente com base em vendas efetivas de imóveis parecidos.",
+            "correctness": "Defensável (preferível)",
+            "correct": false,
+            "rationale": "Preços de transações efetivas têm prioridade na hierarquia do valor justo (CPC 46 item 72); independência do avaliador."
+          },
+          {
+            "id": "b",
+            "text": "Aceitamos o laudo A (R$ 1.400.000), com a ressalva de que o ganho adicional de R$ 280.000 não seja distribuído como dividendo, pois não gerou caixa.",
+            "correctness": "Defensável (com ressalva)",
+            "correct": false,
+            "rationale": "O ganho de VJ vai ao resultado (CPC 28 item 35), mas não é caixa; a ressalva protege a liquidez. Exige justificar a confiabilidade do laudo A."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "theme": "Justificativa (texto livre)",
+        "options": [],
+        "prompt": "Uma frase do grupo justificando a escolha do bloco 4."
+      }
+    ]
+  },
+  "missingBalanceSheets": [],
+  "missingReportSheets": []
+}
